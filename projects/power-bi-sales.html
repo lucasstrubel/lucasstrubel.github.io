@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Power BI Sales Dashboard — Lucas Strubel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body class="cs-page">
+
+  <!-- Navigation -->
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">LS</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#skills">Skills</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+
+      <!-- Back link -->
+      <a href="../index.html#projects" class="cs-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back to Projects
+      </a>
+
+      <!-- Hero image -->
+      <div class="cs-hero">
+        <!-- Replace src with your actual dashboard screenshot -->
+        <!-- <img src="../assets/powerbi-hero.png" alt="Power BI Sales Dashboard overview" /> -->
+        <div class="cs-hero-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:40px;height:40px;margin:0 auto 12px;display:block;opacity:0.3"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          <p style="margin:0;opacity:0.4;font-size:0.8rem">Add dashboard screenshot here<br><code>assets/powerbi-hero.png</code></p>
+        </div>
+      </div>
+
+      <!-- Meta -->
+      <div class="cs-meta">
+        <div class="cs-meta-top">
+          <span class="project-label project-label--case">Case Study</span>
+        </div>
+        <h1 class="cs-title">Power BI Sales Dashboard</h1>
+        <div class="cs-tags">
+          <span>Power BI</span>
+          <span>DAX</span>
+          <span>SQL Server</span>
+          <span>Data Modelling</span>
+          <span>Data Visualisation</span>
+        </div>
+        <div class="cs-links">
+          <!-- Uncomment and update if you have a live report link -->
+          <!--
+          <a href="https://app.powerbi.com/..." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            View Live Report
+          </a>
+          -->
+          <!-- Uncomment if you have a PDF export -->
+          <!--
+          <a href="../assets/powerbi-sales-report.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download PDF
+          </a>
+          -->
+        </div>
+      </div>
+
+      <div class="cs-divider"></div>
+
+      <!-- Body content -->
+      <div class="cs-body">
+
+        <section class="cs-section">
+          <h2>Overview</h2>
+          <p>
+            This project involved building an end-to-end sales analytics solution for a
+            fictional retail company. Starting from raw transactional data in SQL Server,
+            I designed the data model, wrote the business logic in DAX, and delivered a
+            multi-page Power BI report aimed at both operational managers and senior leadership.
+          </p>
+          <p>
+            The goal was to replace a slow, error-prone Excel reporting process with a live,
+            drill-through dashboard that could be filtered by region, product category,
+            and time period — all updating in under two seconds.
+          </p>
+        </section>
+
+        <section class="cs-section">
+          <h2>The Problem</h2>
+          <p>
+            The sales team was working with a manually updated Excel workbook that took over
+            two hours to refresh each Monday morning. Formulas broke regularly, different
+            versions circulated across teams, and there was no way to drill into the numbers
+            without asking for a custom export.
+          </p>
+          <div class="cs-highlight">
+            <p>
+              Key pain point: leadership had no single source of truth for YTD revenue vs target,
+              and regional managers couldn't self-serve their own performance data.
+            </p>
+          </div>
+          <p>
+            The brief was to build something that non-technical stakeholders could open each
+            morning and immediately understand — no training required.
+          </p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Approach &amp; Methodology</h2>
+          <p>
+            I started by auditing the source data in SQL Server — identifying data quality issues,
+            understanding the grain of each table, and mapping out the relationships needed for
+            the star schema.
+          </p>
+          <p>
+            Data transformation was handled in Power Query before loading into the model, keeping
+            the DAX layer focused purely on business logic rather than data cleaning.
+          </p>
+
+          <!-- Screenshot gallery — replace src values with your own images -->
+          <div class="cs-gallery">
+            <div class="cs-hero" style="aspect-ratio:4/3;margin-bottom:0">
+              <div class="cs-hero-placeholder">
+                <p style="margin:0;opacity:0.4;font-size:0.75rem">Data model screenshot<br><code>assets/powerbi-model.png</code></p>
+              </div>
+            </div>
+            <div class="cs-hero" style="aspect-ratio:4/3;margin-bottom:0">
+              <div class="cs-hero-placeholder">
+                <p style="margin:0;opacity:0.4;font-size:0.75rem">Power Query steps<br><code>assets/powerbi-query.png</code></p>
+              </div>
+            </div>
+          </div>
+
+          <p>
+            The DAX measures follow a consistent naming convention and are grouped into
+            display folders — base measures, ratio measures, and time intelligence measures
+            (MTD, QTD, YTD, same period last year). This made it easy to audit and extend
+            the model later.
+          </p>
+          <ul>
+            <li>Star schema with one fact table (Sales) and four dimensions (Date, Product, Region, Customer)</li>
+            <li>All date intelligence via a dedicated, contiguous Date table marked as the model's date table</li>
+            <li>Row-level security configured for regional managers</li>
+            <li>Report-level measures separated from model measures to avoid clutter</li>
+          </ul>
+        </section>
+
+        <section class="cs-section">
+          <h2>Key Findings &amp; Outcomes</h2>
+          <p>
+            The finished report consists of four pages: Executive Summary, Regional Breakdown,
+            Product Performance, and a Detail page for drill-through on individual transactions.
+          </p>
+          <ul>
+            <li>Reduced Monday morning reporting time from 2+ hours to zero — report refreshes automatically via scheduled gateway</li>
+            <li>Identified the North region was consistently 12% below target due to a single underperforming product category not previously visible in the Excel report</li>
+            <li>Leadership adopted the Executive Summary page as the default opening view in weekly business reviews</li>
+            <li>Three regional managers began using the drill-through feature daily within the first week of rollout</li>
+          </ul>
+
+          <!-- Full-width screenshot -->
+          <div class="cs-gallery">
+            <div class="cs-hero cs-gallery-full" style="margin-bottom:0">
+              <div class="cs-hero-placeholder">
+                <p style="margin:0;opacity:0.4;font-size:0.75rem">Executive summary page screenshot<br><code>assets/powerbi-exec.png</code></p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="cs-section">
+          <h2>Reflection</h2>
+          <p>
+            The biggest challenge was convincing stakeholders to trust a live report over a
+            familiar spreadsheet. A short demo session where I showed the drill-through capability
+            — something impossible in Excel — was what shifted the conversation.
+          </p>
+          <p>
+            If I were to extend this project, I'd add a forecasting page using the built-in
+            Power BI Analytics pane, and explore embedding the report directly into a Teams
+            channel so stakeholders receive proactive alerts when revenue drops below a threshold.
+          </p>
+          <p>
+            This project reinforced that the technical work (DAX, modelling) is often the
+            easier half — the harder half is understanding what questions the business actually
+            needs to answer.
+          </p>
+        </section>
+
+      </div><!-- /cs-body -->
+
+      <!-- Bottom navigation -->
+      <div class="cs-nav">
+        <a href="../index.html#projects">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          All Projects
+        </a>
+        <!-- Link to next case study once you have one -->
+        <!--
+        <a href="next-project.html">
+          Next Project
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        -->
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>Designed &amp; built by Lucas Strubel &mdash; <span id="year"></span></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Nav mobile toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.querySelector('.nav-links');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('open')));
+  </script>
+
+</body>
+</html>

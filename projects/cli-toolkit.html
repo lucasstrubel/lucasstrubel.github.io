@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CLI Toolkit — Lucas Strubel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body class="cs-page">
+
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">LS</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#skills">Skills</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+
+      <a href="../index.html#projects" class="cs-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back to Projects
+      </a>
+
+      <div class="cs-hero">
+        <!-- <img src="../assets/cli-hero.png" alt="CLI Toolkit terminal output" /> -->
+        <div class="cs-hero-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:40px;height:40px;margin:0 auto 12px;display:block;opacity:0.3"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+          <p style="margin:0;opacity:0.4;font-size:0.8rem">Add terminal screenshot here<br><code>assets/cli-hero.png</code></p>
+        </div>
+      </div>
+
+      <div class="cs-meta">
+        <div class="cs-meta-top">
+          <span class="project-label project-label--case">Case Study</span>
+        </div>
+        <h1 class="cs-title">CLI Toolkit</h1>
+        <div class="cs-tags">
+          <span>Python</span>
+          <span>Bash</span>
+          <span>Docker</span>
+          <span>Automation</span>
+          <span>Dev Tools</span>
+        </div>
+        <div class="cs-links">
+          <a href="https://github.com/lucasstrubel" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            View on GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="cs-divider"></div>
+
+      <div class="cs-body">
+
+        <section class="cs-section">
+          <h2>Overview</h2>
+          <p>
+            The CLI Toolkit is a collection of command-line utilities built to eliminate
+            repetitive manual steps from a typical development workflow. Each tool does one
+            thing well: project scaffolding, batch file operations, environment setup, and
+            log parsing — all runnable from a single entry point.
+          </p>
+          <p>
+            The project started as a handful of one-off scripts and evolved into a structured
+            package with a consistent interface, shared configuration, and a Docker image
+            for running tools without any local dependencies.
+          </p>
+        </section>
+
+        <section class="cs-section">
+          <h2>The Problem</h2>
+          <p>
+            Every new project started with the same tedious sequence: create folder structure,
+            copy config templates, initialise Git, set up a virtual environment, install base
+            dependencies. Done manually it took 15–20 minutes and was easy to forget a step.
+          </p>
+          <div class="cs-highlight">
+            <p>
+              The real cost wasn't the 20 minutes — it was the inconsistency. Projects set up
+              slightly differently from each other made switching context harder than it needed to be.
+            </p>
+          </div>
+        </section>
+
+        <section class="cs-section">
+          <h2>Approach &amp; Methodology</h2>
+          <p>
+            Each tool is a self-contained Python module that registers itself with a central
+            CLI dispatcher using a simple decorator pattern. Adding a new tool means writing
+            one file — no changes to the dispatcher needed.
+          </p>
+          <ul>
+            <li>Consistent argument interface across all tools — same flags, same output format</li>
+            <li>Dry-run mode on any destructive operation before it executes</li>
+            <li>Docker image bundles all dependencies — runs identically on any machine</li>
+            <li>Bash wrappers for the most common tools so they're callable without the Python prefix</li>
+          </ul>
+
+          <div class="cs-gallery">
+            <div class="cs-hero" style="aspect-ratio:4/3;margin-bottom:0">
+              <div class="cs-hero-placeholder">
+                <p style="margin:0;opacity:0.4;font-size:0.75rem">CLI help output<br><code>assets/cli-help.png</code></p>
+              </div>
+            </div>
+            <div class="cs-hero" style="aspect-ratio:4/3;margin-bottom:0">
+              <div class="cs-hero-placeholder">
+                <p style="margin:0;opacity:0.4;font-size:0.75rem">Scaffold in action<br><code>assets/cli-scaffold.png</code></p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="cs-section">
+          <h2>Key Findings &amp; Outcomes</h2>
+          <ul>
+            <li>New project setup reduced from ~20 minutes to under 30 seconds</li>
+            <li>All personal projects now share an identical base structure — switching between them is frictionless</li>
+            <li>The decorator-based plugin pattern proved flexible: three new tools were added later without touching existing code</li>
+            <li>Docker packaging meant the toolkit worked identically across Windows and Linux environments</li>
+          </ul>
+        </section>
+
+        <section class="cs-section">
+          <h2>Reflection</h2>
+          <p>
+            The most interesting design decision was choosing between a monolithic CLI and
+            a plugin system. The plugin approach cost more upfront but paid off immediately
+            when adding tools became a matter of minutes rather than modifying a growing
+            main file.
+          </p>
+          <p>
+            A natural next step would be publishing the package to PyPI so it can be
+            installed with a single <code style="background:rgba(196,180,154,0.1);padding:2px 6px;border-radius:4px;font-size:0.9em">pip install</code> command, and adding a
+            configuration file so project templates can be customised per-user.
+          </p>
+        </section>
+
+      </div>
+
+      <div class="cs-nav">
+        <a href="data-dashboard.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          Previous Project
+        </a>
+        <a href="ml-classifier.html">
+          Next Project
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Designed &amp; built by Lucas Strubel &mdash; <span id="year"></span></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.querySelector('.nav-links');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('open')));
+  </script>
+
+</body>
+</html>
