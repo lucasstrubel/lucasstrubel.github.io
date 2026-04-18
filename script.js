@@ -21,7 +21,7 @@ navLinks.querySelectorAll('a').forEach(link => {
 
 // ── Scroll reveal ──
 const revealEls = document.querySelectorAll(
-  '.section-header, .skill-card, .project-card, .about-grid, .contact-wrapper, .about-stats'
+  '.section-header, .skill-card, .project-card, .blog-card, .about-grid, .contact-wrapper, .about-stats'
 );
 
 revealEls.forEach(el => el.classList.add('reveal'));
@@ -30,7 +30,7 @@ const io = new IntersectionObserver((entries) => {
   entries.forEach((entry, i) => {
     if (entry.isIntersecting) {
       // Stagger children if it's a grid parent
-      const cards = entry.target.querySelectorAll('.skill-card, .project-card');
+      const cards = entry.target.querySelectorAll('.skill-card, .project-card, .blog-card');
       if (cards.length) {
         cards.forEach((card, idx) => {
           setTimeout(() => card.classList.add('visible'), idx * 80);
