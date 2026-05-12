@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <script>(function(){var s=localStorage.getItem('theme');var p=s?s:(window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');if(p==='light')document.documentElement.setAttribute('data-theme','light');}());</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How I Actually Use AI as a Student — Lucas Strubel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body class="cs-page">
+
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">LS</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#skills">Skills</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#blog">Blog</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch color theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+
+      <a href="../index.html#blog" class="post-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Back to Blog
+      </a>
+
+      <div class="post-meta-top">
+        <span class="blog-category">Workflow</span>
+        <span class="blog-meta">December 2025 &middot; 6 min read</span>
+      </div>
+
+      <h1 class="post-title">How I Actually Use AI as a Student</h1>
+
+      <div class="post-tags">
+        <span>AI</span>
+        <span>Student Life</span>
+        <span>Productivity</span>
+      </div>
+
+      <hr class="post-divider" />
+
+      <div class="cs-body">
+
+        <section class="cs-section">
+          <h2>The Honest Starting Point</h2>
+          <p>
+            I was skeptical at first. Not of AI in general, but of the way people talked about it — as if it would do your work for you and no one would notice. That framing always felt off to me. It also felt like a good way to graduate without actually knowing anything.
+          </p>
+          <p>
+            What changed my mind was not a productivity hack or a YouTube tutorial. It was a deadline. I had three assignments due in the same week and a study group that had fallen apart. I needed to work faster without producing worse output. That pressure forced me to figure out, very quickly, what AI was actually useful for and what it was not.
+          </p>
+          <p>
+            Six months later, AI is embedded in most of what I do academically. But the way I use it looks nothing like what most people seem to imagine when they hear "students using AI."
+          </p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Understanding Lecture Material Faster</h2>
+          <p>
+            Business informatics involves a lot of concepts that sit at the intersection of IT and management — topics where the textbook explanation is either too abstract or too shallow depending on which direction you're coming from. I often found myself understanding the words but not the point.
+          </p>
+          <p>
+            My fix: after a lecture, I write a short summary of what I think I understood and paste it into Claude with the prompt "identify the gaps in my understanding of this concept." The model usually surfaces one or two things I glossed over or got slightly wrong. That feedback loop is faster and more targeted than rereading the slide deck.
+          </p>
+          <p>
+            I also use it to generate examples. Abstract frameworks become much easier to internalize once you see them applied to a concrete case. Asking "give me three examples of this process model applied to a mid-sized logistics company" takes ten seconds and usually produces something I can reason about.
+          </p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Writing Assignments Without Letting AI Write Them</h2>
+          <p>
+            This is where the distinction matters most, and where I think a lot of students get it wrong in both directions — either handing everything to the model, or refusing to use it at all out of some principle that does not actually help them learn.
+          </p>
+          <p>
+            My process for written work looks like this:
+          </p>
+          <ul>
+            <li><strong>Outline first, alone.</strong> I build the structure of my argument before I open any AI tool. This forces me to actually have a position, not just fill space.</li>
+            <li><strong>Write a rough draft, alone.</strong> Even a bad draft makes the next steps more useful. If I skip this, I end up editing someone else's argument, which is both academically dishonest and worse for my actual understanding.</li>
+            <li><strong>Use AI for specific editing passes.</strong> I will ask Claude to flag sentences that are unclear, identify where my reasoning has a gap, or suggest a more precise word for something I've been vague about. I treat these as editorial notes, not corrections to accept wholesale.</li>
+            <li><strong>Rewrite manually.</strong> Every change I accept, I rephrase in my own words. The output is mine, even when the suggestion wasn't.</li>
+          </ul>
+          <p>
+            This takes longer than just generating an essay, which is the point. The goal is not to produce text efficiently — it is to produce text I actually understand and can defend in a seminar.
+          </p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Coding and Data Work</h2>
+          <p>
+            For my data analysis and programming coursework, AI has been the biggest time-saver in a legitimate way. Debugging syntax errors and looking up function signatures used to consume a disproportionate amount of time relative to how much I was learning from doing it. Now I describe what I want in plain language, get a working starting point, and spend my time understanding and adapting the logic rather than fighting the documentation.
+          </p>
+          <p>
+            The rule I apply: I do not submit code I cannot explain line by line. If a model generates something and I do not understand a section, I ask it to explain that section — and if the explanation does not stick, I rewrite the relevant part myself until it does. This is slower than copy-pasting, but it means I actually build skills rather than a portfolio of code I cannot reproduce.
+          </p>
+          <p>
+            It has also changed how I approach errors. My first instinct used to be to Google the error message. Now my first instinct is to describe the error in context — "this function is supposed to do X, here is what it is doing instead, here is the data it is receiving" — and get a targeted hypothesis rather than a Stack Overflow thread from 2016.
+          </p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Exam Preparation</h2>
+          <p>
+            This is where AI has surprised me most. I use it to generate practice questions on material I've already reviewed — not as a replacement for flashcards, but as a way to encounter concepts in new framings. A question about Porter's Five Forces asked as a case analysis hits differently than the same question asked as a definition fill-in.
+          </p>
+          <p>
+            I also use it for what I call "devil's advocate" sessions before exams. I state my understanding of a concept and ask the model to challenge it: "here is how I understand transaction cost theory — what am I missing or oversimplifying?" The pushback surfaces assumptions I did not know I was making, which is exactly what a good seminar discussion does, but available at midnight before an exam.
+          </p>
+        </section>
+
+        <section class="cs-section">
+          <h2>What I Don't Use It For</h2>
+          <p>
+            I do not use AI to generate first drafts of written work. I do not use it to form opinions I should be forming myself. I do not use it to look up facts I need to actually know — lecture content, core frameworks, numbers that will come up in exams — because retrieval practice is how memory forms, and outsourcing that defeats the purpose of studying.
+          </p>
+          <p>
+            I also try not to use it when I am uncertain about something and want to stay uncertain for a bit. That discomfort is often where the actual thinking happens. Resolving it too quickly with a model tends to produce a shallow understanding that collapses under questioning.
+          </p>
+        </section>
+
+        <section class="cs-section">
+          <h2>The Underlying Principle</h2>
+          <p>
+            Everything I use AI for passes one test: does this make me better at the thing, or does it just produce an output that looks like I did the thing? There is a difference between using a calculator to skip arithmetic so you can focus on the model, and using a calculator because you never learned to multiply. I want to be in the first category.
+          </p>
+          <p>
+            That distinction gets easier to maintain once you decide what you are actually trying to get out of your education. For me, it is the ability to reason clearly about complex systems, write precisely, and build things that work. AI accelerates all of those when I use it right, and undermines all of them when I use it as a shortcut.
+          </p>
+          <p>
+            The students who will look back on this period and feel like they wasted it are, I think, the ones who let the tools do their thinking. The ones who will look back and feel like they got ahead are the ones who used the tools to think harder.
+          </p>
+        </section>
+
+      </div>
+
+      <div class="cs-nav">
+        <a href="../index.html#blog">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          All Posts
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Designed &amp; built by Lucas Strubel &mdash; <span id="year"></span></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const navToggle = document.getElementById('navToggle');
+    const navLinks  = document.querySelector('.nav-links');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('open')));
+  </script>
+  <script src="../theme.js"></script>
+
+</body>
+</html>
