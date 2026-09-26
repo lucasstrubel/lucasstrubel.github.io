@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <script src="../init.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="title.portfolio">Portfolio Website — Lucas Strubel</title>
+  <meta name="description" content="How I built and hardened my portfolio website: vanilla HTML, CSS and JavaScript, English-first i18n, a strict Content Security Policy, WCAG AA accessibility and a custom domain on GitHub Pages." />
+  <link rel="icon" type="image/png" href="../favicon.png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <link rel="canonical" href="https://lucasstrubel.me/projects/portfolio.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Lucas Strubel" />
+  <meta property="og:title" content="Portfolio Website — Case Study by Lucas Strubel" />
+  <meta property="og:description" content="How I built and hardened my portfolio website: vanilla HTML, CSS and JavaScript, English-first i18n, a strict Content Security Policy, WCAG AA accessibility and a custom domain on GitHub Pages." />
+  <meta property="og:url" content="https://lucasstrubel.me/projects/portfolio.html" />
+  <meta property="og:image" content="https://lucasstrubel.me/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Lucas Strubel — Business Informatics · Portfolio" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="de_DE" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="../assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body class="cs-page">
+
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
+  <!-- Navigation -->
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">LS</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html#about" data-i18n="nav.about">About</a></li>
+        <li><a href="../index.html#skills" data-i18n="nav.skills">Skills</a></li>
+        <li><a href="../index.html#projects" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="../index.html#blog">Blog</a></li>
+        <li><a href="../index.html#contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="lang-toggle" id="langToggle" aria-label="DE/EN – Switch language" data-i18n-attr="aria-label:a11y.lang">
+          <span class="lang-opt-de">DE</span><span class="lang-sep">/</span><span class="lang-opt-en">EN</span>
+        </button>
+        <button class="theme-toggle" id="themeToggle" aria-label="Switch color theme" data-i18n-attr="aria-label:a11y.theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu" data-i18n-attr="aria-label:a11y.menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+
+      <!-- Back link -->
+      <a href="../index.html#projects" class="cs-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        <span data-i18n="back.projects">Back to Projects</span>
+      </a>
+
+      <!-- Hero image -->
+      <div class="cs-hero cs-hero--fit">
+        <img src="../assets/portfolio/home-dark.webp" width="1440" height="900" fetchpriority="high"
+          alt="Homepage of lucasstrubel.me in dark mode with introduction and portrait"
+          data-i18n-attr="alt:pf.heroAlt" />
+      </div>
+
+      <!-- Meta -->
+      <div class="cs-meta">
+        <div class="cs-meta-top">
+          <span class="project-label project-label--case">Web</span>
+        </div>
+        <h1 class="cs-title" data-i18n="pf.title">Portfolio Website</h1>
+        <p class="cs-subtitle" data-i18n="pf.subtitle">From a hand-written static site to a hardened, bilingual portfolio on its own domain</p>
+        <div class="cs-tags">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>GitHub Pages</span>
+          <span>CSP</span>
+          <span>WCAG AA</span>
+        </div>
+        <div class="cs-links">
+          <a href="https://github.com/lucasstrubel/lucasstrubel.github.io" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            <span data-i18n="pf.source">Source on GitHub</span>
+          </a>
+          <a href="https://lucasstrubel.me">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <span data-i18n="pf.live">Live site</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="cs-divider"></div>
+
+      <!-- Body content: English -->
+      <div class="cs-body" data-lang="en">
+
+        <section class="cs-section">
+          <h2>Overview</h2>
+          <p>
+            This website is where recruiters and anyone else curious can see who I am, what I have
+            built and what I think about. It started in 2025 as a simple static page and has grown
+            into a bilingual portfolio with project case studies and a blog.
+          </p>
+          <p>
+            I deliberately built it without a framework or build step: plain HTML, CSS and
+            JavaScript, hosted on GitHub Pages. Writing every line myself forces me to understand
+            what frameworks usually hide — and it keeps the site fast, cheap to host and easy to
+            reason about.
+          </p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Architecture</h2>
+          <ul>
+            <li><strong>Static pages:</strong> one homepage, one page per case study and blog post, a custom 404 page. No database, no server-side code.</li>
+            <li><strong>No flash on load:</strong> a tiny synchronous <code>init.js</code> in the <code>&lt;head&gt;</code> sets the colour theme and language before the first paint.</li>
+            <li><strong>English-first i18n:</strong> English is written directly in the markup, so search engines and link previews see it. German UI strings live in a dictionary in <code>lang.js</code>; long-form text such as this page uses paired language blocks. The choice is remembered in <code>localStorage</code>.</li>
+            <li><strong>Privacy by default:</strong> self-hosted fonts, no analytics, no cookies, no third-party requests.</li>
+          </ul>
+        </section>
+
+        <section class="cs-section">
+          <h2>A Senior-Level Review</h2>
+          <p>
+            In September 2026 I asked for a review of the whole site from the perspective of an
+            experienced web developer. It ran as three parallel passes — security and privacy;
+            performance, SEO and accessibility; code quality and architecture — and produced a
+            prioritised list of findings. I grouped them into phases and implemented the ones with
+            the best value for a portfolio.
+          </p>
+          <p>
+            Just as important were the things I decided <em>not</em> to do. Migrating to a static
+            site generator such as Eleventy would remove duplicated markup, but it adds a build
+            pipeline that a six-page site does not need yet. Some structured data and hardening
+            measures were simply overkill for the purpose of the site.
+          </p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Security</h2>
+          <ul>
+            <li><strong>Strict Content Security Policy:</strong> I moved every inline script and style into files, which made it possible to set <code>script-src 'self'</code> on every page. A CSP shapes architecture — it only works if the code is organised for it.</li>
+            <li><strong>Referrer policy</strong> via meta tag, so outgoing links only reveal the origin.</li>
+            <li><strong>Defensive storage access:</strong> <code>localStorage</code> can throw in some privacy modes, so every read and write is guarded and the site falls back to its defaults.</li>
+          </ul>
+        </section>
+
+        <section class="cs-section">
+          <h2>Accessibility &amp; Performance</h2>
+          <ul>
+            <li><strong>Contrast:</strong> I recalculated the colour tokens against WCAG AA. The primary button in light mode had a contrast ratio of only 2.9:1; all text now reaches at least 4.5:1 in both themes.</li>
+            <li><strong>Keyboard and screen readers:</strong> a skip link, a visible focus ring, a mobile menu that announces its state with <code>aria-expanded</code> and closes with Escape, and specific labels for icon links.</li>
+            <li><strong>Reduced motion:</strong> animations switch off when the operating system asks for it.</li>
+            <li><strong>Images:</strong> the hero portrait went from 165 KB to 7–34 KB as responsive WebP, and the link preview image from 252 KB to about 60 KB.</li>
+          </ul>
+        </section>
+
+        <section class="cs-section">
+          <h2>Custom Domain</h2>
+          <p>
+            Through the GitHub Student Developer Pack I got the domain <strong>lucasstrubel.me</strong>
+            for a year. GitHub Pages keeps hosting the site; only DNS changes:
+          </p>
+          <ul>
+            <li>four A records pointing the apex domain to GitHub Pages,</li>
+            <li>a CNAME record pointing <code>www</code> to <code>lucasstrubel.github.io</code>,</li>
+            <li>a TXT record that verifies the domain in my GitHub account and protects it against takeover,</li>
+            <li>and a <code>CNAME</code> file in the repository.</li>
+          </ul>
+          <p>
+            HTTPS comes for free: GitHub Pages issues a Let's Encrypt certificate automatically, so the
+            separate SSL certificate from the student pack was not needed. The one stumbling block was
+            my <code>www</code> record, which first pointed to the apex domain instead of GitHub — and
+            DNS changes mostly mean waiting for them to propagate.
+          </p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Results</h2>
+          <div class="cs-highlight">
+            <p>
+              Lighthouse (local measurement): Performance 98–99, Accessibility 100, Best Practices 100
+              and SEO 100 across the homepage, case studies and blog posts — with zero console errors
+              and no Content Security Policy violations on any page.
+            </p>
+          </div>
+        </section>
+
+        <section class="cs-section">
+          <h2>What I Learned</h2>
+          <ul>
+            <li><strong>Security is an architecture decision.</strong> A strict CSP was only possible after restructuring where code lives.</li>
+            <li><strong>First impressions happen before the click.</strong> Making English the source language changed what LinkedIn and search engines show — the preview is the first thing a recruiter sees.</li>
+            <li><strong>Prioritising is part of the job.</strong> A good review produces more findings than are worth fixing; choosing what fits the purpose mattered more than completeness.</li>
+            <li><strong>DNS rewards patience.</strong> Most of the domain setup was waiting and verifying, not configuring.</li>
+          </ul>
+        </section>
+
+        <section class="cs-section">
+          <h2>Built with Claude Code</h2>
+          <p>
+            As with Faktura, I am open about how this was built: the review and most of the
+            implementation ran with Claude Code. The decisions — what to fix, what to skip, how the
+            site should present me — and the checking of every change were mine.
+          </p>
+        </section>
+
+      </div><!-- /cs-body en -->
+
+      <!-- Body content: German -->
+      <div class="cs-body" data-lang="de" lang="de">
+
+        <section class="cs-section">
+          <h2>Überblick</h2>
+          <p>
+            Auf dieser Website können sich Recruiter und alle anderen Interessierten ein Bild davon
+            machen, wer ich bin, was ich gebaut habe und worüber ich nachdenke. Sie begann 2025 als
+            einfache statische Seite und ist inzwischen ein zweisprachiges Portfolio mit Fallstudien
+            und Blog.
+          </p>
+          <p>
+            Ich habe sie bewusst ohne Framework und ohne Build-Step gebaut: reines HTML, CSS und
+            JavaScript, gehostet über GitHub Pages. Jede Zeile selbst zu schreiben zwingt mich, zu
+            verstehen, was Frameworks sonst verbergen — und hält die Seite schnell, kostenlos im
+            Hosting und leicht nachvollziehbar.
+          </p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Architektur</h2>
+          <ul>
+            <li><strong>Statische Seiten:</strong> eine Startseite, je eine Seite pro Fallstudie und Blogbeitrag, eine eigene 404-Seite. Keine Datenbank, kein serverseitiger Code.</li>
+            <li><strong>Kein Flackern beim Laden:</strong> ein kleines, synchron geladenes <code>init.js</code> im <code>&lt;head&gt;</code> setzt Farbschema und Sprache vor dem ersten Rendern.</li>
+            <li><strong>Englisch als Quellsprache:</strong> Englisch steht direkt im HTML, damit Suchmaschinen und Link-Vorschauen es sehen. Die deutschen Texte liegen in einem Wörterbuch in <code>lang.js</code>; lange Texte wie diese Seite nutzen gepaarte Sprachblöcke. Die Auswahl wird in <code>localStorage</code> gespeichert.</li>
+            <li><strong>Datenschutz als Standard:</strong> selbst gehostete Schriften, kein Tracking, keine Cookies, keine Anfragen an Drittanbieter.</li>
+          </ul>
+        </section>
+
+        <section class="cs-section">
+          <h2>Ein Review auf Senior-Niveau</h2>
+          <p>
+            Im September 2026 habe ich die gesamte Seite aus Sicht eines erfahrenen Webentwicklers
+            prüfen lassen. Das Review lief in drei parallelen Durchgängen — Sicherheit und Datenschutz;
+            Performance, SEO und Barrierefreiheit; Codequalität und Architektur — und ergab eine
+            priorisierte Liste von Befunden. Diese habe ich in Phasen gegliedert und die umgesetzt,
+            die für ein Portfolio den größten Nutzen haben.
+          </p>
+          <p>
+            Genauso wichtig war, was ich bewusst <em>nicht</em> umgesetzt habe. Eine Migration auf
+            einen Static-Site-Generator wie Eleventy würde doppeltes Markup beseitigen, bringt aber
+            eine Build-Pipeline mit, die eine Seite mit sechs Unterseiten noch nicht braucht. Manche
+            strukturierten Daten und Härtungsmaßnahmen waren für den Zweck der Seite schlicht
+            überdimensioniert.
+          </p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Sicherheit</h2>
+          <ul>
+            <li><strong>Strikte Content Security Policy:</strong> Ich habe alle Inline-Skripte und -Styles in Dateien ausgelagert. Erst dadurch ließ sich auf jeder Seite <code>script-src 'self'</code> setzen. Eine CSP prägt die Architektur — sie funktioniert nur, wenn der Code dafür organisiert ist.</li>
+            <li><strong>Referrer-Policy</strong> per Meta-Tag, damit ausgehende Links nur die Domain preisgeben.</li>
+            <li><strong>Abgesicherter Speicherzugriff:</strong> <code>localStorage</code> kann in manchen Privatsphäre-Modi Fehler werfen. Jeder Zugriff ist daher abgesichert, und die Seite fällt auf ihre Standardwerte zurück.</li>
+          </ul>
+        </section>
+
+        <section class="cs-section">
+          <h2>Barrierefreiheit &amp; Performance</h2>
+          <ul>
+            <li><strong>Kontrast:</strong> Ich habe die Farbwerte gegen WCAG AA nachgerechnet. Der Primär-Button im hellen Modus kam nur auf ein Kontrastverhältnis von 2,9:1; inzwischen erreicht jeder Text in beiden Farbschemata mindestens 4,5:1.</li>
+            <li><strong>Tastatur und Screenreader:</strong> ein Link „Zum Inhalt springen“, ein sichtbarer Fokusrahmen, ein mobiles Menü, das seinen Zustand mit <code>aria-expanded</code> meldet und sich mit Escape schließt, sowie eindeutige Beschriftungen für Icon-Links.</li>
+            <li><strong>Reduzierte Bewegung:</strong> Animationen schalten sich ab, wenn das Betriebssystem das verlangt.</li>
+            <li><strong>Bilder:</strong> Das Porträt auf der Startseite schrumpfte als responsives WebP von 165 KB auf 7–34 KB, das Vorschaubild für Link-Vorschauen von 252 KB auf rund 60 KB.</li>
+          </ul>
+        </section>
+
+        <section class="cs-section">
+          <h2>Eigene Domain</h2>
+          <p>
+            Über das GitHub Student Developer Pack habe ich die Domain <strong>lucasstrubel.me</strong>
+            für ein Jahr erhalten. Das Hosting bleibt bei GitHub Pages; geändert wird nur das DNS:
+          </p>
+          <ul>
+            <li>vier A-Records, die die Hauptdomain auf GitHub Pages zeigen lassen,</li>
+            <li>ein CNAME-Record, der <code>www</code> auf <code>lucasstrubel.github.io</code> verweist,</li>
+            <li>ein TXT-Record, der die Domain in meinem GitHub-Konto verifiziert und vor Übernahme schützt,</li>
+            <li>und eine <code>CNAME</code>-Datei im Repository.</li>
+          </ul>
+          <p>
+            HTTPS gibt es kostenlos dazu: GitHub Pages stellt automatisch ein Let's-Encrypt-Zertifikat
+            aus, das separate SSL-Zertifikat aus dem Student Pack war daher nicht nötig. Der einzige
+            Stolperstein war mein <code>www</code>-Eintrag, der zunächst auf die Hauptdomain statt auf
+            GitHub zeigte — und DNS-Änderungen bedeuten vor allem: warten, bis sie sich verbreitet haben.
+          </p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Ergebnisse</h2>
+          <div class="cs-highlight">
+            <p>
+              Lighthouse (lokal gemessen): Performance 98–99, Barrierefreiheit 100, Best Practices 100
+              und SEO 100 auf Startseite, Fallstudien und Blogbeiträgen — ohne Konsolenfehler und ohne
+              Verstöße gegen die Content Security Policy auf irgendeiner Seite.
+            </p>
+          </div>
+        </section>
+
+        <section class="cs-section">
+          <h2>Was ich gelernt habe</h2>
+          <ul>
+            <li><strong>Sicherheit ist eine Architekturentscheidung.</strong> Eine strikte CSP wurde erst möglich, nachdem ich umstrukturiert hatte, wo Code liegt.</li>
+            <li><strong>Der erste Eindruck entsteht vor dem Klick.</strong> Englisch als Quellsprache hat verändert, was LinkedIn und Suchmaschinen anzeigen — die Vorschau ist das Erste, was ein Recruiter sieht.</li>
+            <li><strong>Priorisieren gehört dazu.</strong> Ein gutes Review liefert mehr Befunde, als sich zu beheben lohnt; entscheidend war, auszuwählen, was zum Zweck passt.</li>
+            <li><strong>DNS belohnt Geduld.</strong> Der Großteil der Domain-Einrichtung war Warten und Prüfen, nicht Konfigurieren.</li>
+          </ul>
+        </section>
+
+        <section class="cs-section">
+          <h2>Mit Claude Code entwickelt</h2>
+          <p>
+            Wie bei Faktura lege ich offen, wie die Seite entstanden ist: Das Review und der Großteil
+            der Umsetzung liefen mit Claude Code. Die Entscheidungen — was behoben wird, was nicht, wie
+            die Seite mich präsentieren soll — und die Prüfung jeder Änderung lagen bei mir.
+          </p>
+        </section>
+
+      </div><!-- /cs-body de -->
+
+      <!-- Bottom navigation -->
+      <div class="cs-nav">
+        <a href="../index.html#projects">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          <span data-i18n="back.allProjects">All Projects</span>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p><span data-i18n="footer.built">Designed &amp; built by Lucas Strubel</span> &mdash; <span id="year"></span></p>
+    </div>
+  </footer>
+
+  <script src="../theme.js"></script>
+  <script src="../lang.js"></script>
+  <script src="../script.js"></script>
+
+</body>
+</html>

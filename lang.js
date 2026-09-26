@@ -79,6 +79,7 @@
     'title.academy':  'Zehn Kurse Anthropic Academy: Was wirklich hängen geblieben ist — Lucas Strubel',
     'title.fluency':  'KI-Kompetenz: Die Fähigkeit, auf die es gerade wirklich ankommt — Lucas Strubel',
     'title.workflow': 'Wie ich KI im Studium tatsächlich nutze — Lucas Strubel',
+    'title.portfolio': 'Portfolio-Website — Lucas Strubel',
     'tag.ai':           'KI',
     'tag.productivity': 'Produktivität',
     'tag.skills':       'Kompetenzen',
@@ -102,7 +103,14 @@
     'fk.heroAlt':   'Faktura-Übersicht mit offenen und überfälligen Rechnungen sowie dem Jahresumsatz',
     'fk.source':    'Quellcode auf GitHub',
     'fk.download':  'Download (v3.0.0)',
-    'fk.caseStudy': 'Vollständige Fallstudie (PDF)'
+    'fk.caseStudy': 'Vollständige Fallstudie (PDF)',
+
+    // Portfolio case study
+    'pf.title':     'Portfolio-Website',
+    'pf.subtitle':  'Von der handgeschriebenen statischen Seite zum abgesicherten, zweisprachigen Portfolio mit eigener Domain',
+    'pf.heroAlt':   'Startseite von lucasstrubel.me im Dunkelmodus mit Vorstellung und Porträt',
+    'pf.source':    'Quellcode auf GitHub',
+    'pf.live':      'Live-Seite'
   };
 
   var textEls = document.querySelectorAll('[data-i18n]');

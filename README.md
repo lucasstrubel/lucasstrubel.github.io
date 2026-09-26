@@ -13,7 +13,7 @@ A personal portfolio built from scratch using HTML, CSS, and vanilla JavaScript 
 - **English / German** — language toggle in the nav bar, English by default; English is written in the markup (so crawlers and link previews see it), German UI strings are swapped in from a dictionary in `lang.js`, long-form pages carry paired `data-lang` blocks, and the choice persists via `localStorage`
 - **Scroll animations** — IntersectionObserver reveals with staggered card entrances
 - **Active nav highlight** — nav link updates automatically as you scroll through sections
-- **Project case studies** — detail pages under `projects/`, starting with [Faktura](https://github.com/lucasstrubel/faktura)
+- **Project case studies** — detail pages under `projects/`: [Faktura](https://lucasstrubel.me/projects/faktura.html) and a case study of [this website itself](https://lucasstrubel.me/projects/portfolio.html) — review, security, accessibility and the custom domain setup
 - **Blog** — writing section with individual post pages under `blog/`
 - **Dynamic footer** — current year injected via JavaScript
 - **Self-hosted fonts** — Inter + Space Grotesk served from `assets/fonts/` as variable woff2, so no visitor data goes to Google (GDPR)
