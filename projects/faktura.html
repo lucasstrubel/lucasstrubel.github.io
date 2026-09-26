@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <script src="../init.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Faktura — Lucas Strubel</title>
+  <meta name="description" content="Local desktop invoicing with EN 16931 e-invoicing, GoBD-compliant: from a university project at TH Mannheim to a shippable application. Java 21, Spring Boot, JavaFX, SQLite." />
+  <link rel="icon" type="image/png" href="../favicon.png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <link rel="canonical" href="https://lucasstrubel.github.io/projects/faktura.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Lucas Strubel" />
+  <meta property="og:title" content="Faktura — Case Study by Lucas Strubel" />
+  <meta property="og:description" content="Local desktop invoicing with EN 16931 e-invoicing, GoBD-compliant: from a university project at TH Mannheim to a shippable application. Java 21, Spring Boot, JavaFX, SQLite." />
+  <meta property="og:url" content="https://lucasstrubel.github.io/projects/faktura.html" />
+  <meta property="og:image" content="https://lucasstrubel.github.io/assets/faktura/uebersicht-hell.png" />
+  <meta property="og:image:width" content="1459" />
+  <meta property="og:image:height" content="892" />
+  <meta property="og:image:alt" content="Overview of the Faktura invoicing application" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="de_DE" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="../assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body class="cs-page">
+
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
+  <!-- Navigation -->
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">LS</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html#about" data-i18n="nav.about">About</a></li>
+        <li><a href="../index.html#skills" data-i18n="nav.skills">Skills</a></li>
+        <li><a href="../index.html#projects" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="../index.html#blog">Blog</a></li>
+        <li><a href="../index.html#contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="lang-toggle" id="langToggle" aria-label="DE/EN – Switch language" data-i18n-attr="aria-label:a11y.lang">
+          <span class="lang-opt-de">DE</span><span class="lang-sep">/</span><span class="lang-opt-en">EN</span>
+        </button>
+        <button class="theme-toggle" id="themeToggle" aria-label="Switch color theme" data-i18n-attr="aria-label:a11y.theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu" data-i18n-attr="aria-label:a11y.menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container">
+
+      <!-- Back link -->
+      <a href="../index.html#projects" class="cs-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        <span data-i18n="back.projects">Back to Projects</span>
+      </a>
+
+      <!-- Hero image -->
+      <div class="cs-hero cs-hero--fit">
+        <img src="../assets/faktura/uebersicht-hell.png" width="1459" height="892" fetchpriority="high"
+          alt="Faktura overview showing open and overdue invoices and revenue for the year"
+          data-i18n-attr="alt:fk.heroAlt" />
+      </div>
+
+      <!-- Meta -->
+      <div class="cs-meta">
+        <div class="cs-meta-top">
+          <span class="project-label project-label--case">Software Engineering</span>
+        </div>
+        <h1 class="cs-title">Faktura</h1>
+        <p class="cs-subtitle" data-i18n="fk.subtitle">From university project to shippable invoicing application</p>
+        <div class="cs-tags">
+          <span>Java 21</span>
+          <span>Spring Boot</span>
+          <span>JavaFX</span>
+          <span>SQLite</span>
+          <span>Flyway</span>
+          <span>Apache PDFBox</span>
+          <span>EN 16931</span>
+          <span>JUnit 5</span>
+          <span>GitHub Actions</span>
+        </div>
+        <div class="cs-links">
+          <a href="https://github.com/lucasstrubel/faktura" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            <span data-i18n="fk.source">Source on GitHub</span>
+          </a>
+          <a href="https://github.com/lucasstrubel/faktura/releases/latest" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span data-i18n="fk.download">Download (v3.0.0)</span>
+          </a>
+          <a href="https://github.com/lucasstrubel/faktura/blob/main/dokumentation/pdf/Fallstudie.pdf" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            <span data-i18n="fk.caseStudy">Full case study (PDF, German)</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="cs-divider"></div>
+
+      <!-- Body content: English -->
+      <div class="cs-body" data-lang="en">
+
+        <section class="cs-section">
+          <h2>Overview</h2>
+          <p>
+            Faktura is a lean desktop invoicing application for freelancers and micro-businesses.
+            It manages customers and products and covers the full commercial document cycle —
+            quote → order confirmation → delivery note → invoice — with PDF output, EN 16931
+            e-invoicing, gap-free invoice numbers and immutable sent documents. Everything runs
+            locally: no cloud, no subscription, no telemetry.
+          </p>
+          <p>
+            Faktura started in the <strong>Software Engineering 1</strong> module at
+            <strong>TH Mannheim</strong> (summer semester 2026). Twelve students in four groups
+            went through the full V-model process — requirements, specification, design, module
+            testing, acceptance — with each group owning one of the four components. I managed
+            the repository and wrote all of the project documents. Since the course ended, I have
+            been developing Faktura on my own into a shippable application.
+          </p>
+          <div class="cs-highlight">
+            <p>
+              As of version 3.0: around 12,600 lines of Java, 201 automated tests, a coverage
+              gate and SpotBugs enforced in the build, and a Windows installer plus a
+              cross-platform JAR published from a Git tag.
+            </p>
+          </div>
+        </section>
+
+        <section class="cs-section">
+          <h2>The Problem</h2>
+          <p>
+            <strong>Invoicing is a compliance problem dressed up as CRUD.</strong> Spreadsheets
+            are free but not legally robust. SaaS tools charge an ongoing subscription for a
+            handful of invoices a month and put customer data on someone else's servers.
+            Open-source alternatives demand setup and maintenance from people whose job isn't IT.
+            On top of that comes e-invoicing: since 2025 every German business must be able to
+            receive structured invoices, and from 2027/2028 issue them — a PDF is no longer enough.
+          </p>
+          <p>
+            The screens look like ordinary CRUD. Underneath are rules that must hold
+            <em>always</em>, not usually:
+          </p>
+          <ul>
+            <li><strong>GoBD, completeness:</strong> no invoice number may ever be lost, not even when saving fails.</li>
+            <li><strong>GoBD, immutability:</strong> a sent invoice is never edited or deleted — it is offset by a cancellation invoice.</li>
+            <li><strong>§ 14 UStG (German VAT Act):</strong> mandatory details on every invoice, including the tax number and VAT broken down per tax rate.</li>
+            <li><strong>EN 16931:</strong> structured XML alongside the PDF — with exactly the same amounts.</li>
+            <li><strong>GDPR:</strong> customer data stays on the user's machine.</li>
+          </ul>
+          <p>
+            <strong>A project that passed acceptance is not yet a product.</strong> Version 1.0
+            passed — every mandatory requirement implemented, 71 of 71 module tests green. It still
+            wasn't shippable:
+          </p>
+          <ul>
+            <li>Data lived in JSON files that were rewritten in full on every change.</li>
+            <li>The invoice counter was a number in memory, incremented <em>before</em> saving. If saving failed, the number was gone — a silent violation of exactly the rule that matters most.</li>
+            <li>Hand-wired dependency injection and a Swing UI that froze on every PDF export.</li>
+            <li>E-invoicing — the part the law actually requires — was an explicit non-goal.</li>
+          </ul>
+          <p>
+            So the real project was to rebuild a codebase that <em>works</em> into one that
+            <em>holds up</em> — without throwing away the parts that had earned their place.
+          </p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Five Decisions That Carry the Rules</h2>
+          <p>In each case, the obvious implementation was the wrong one.</p>
+          <ul>
+            <li><strong>Gap-free numbers as a database invariant.</strong> Number assignment runs in the same transaction as saving the document, so a failed save rolls it back too. A test forces exactly that failure and checks that no gap appears.</li>
+            <li><strong>Sent documents are immutable.</strong> Instead of editing or deleting, Faktura issues a cancellation invoice — with its own number, negative quantities, a reference to the original, and exported as an e-invoice of type 384 (corrected invoice).</li>
+            <li><strong>Snapshots, not references.</strong> Each document stores the customer, the issuer and the prices as they were when it was created. Moving office or switching banks never rewrites old invoices.</li>
+            <li><strong>PDF and e-invoice match to the cent.</strong> Version 1.0 rounded VAT per line item; the standard calculates per tax rate. With ten items at €1.10 each that's €2.10 versus €2.09 — the same invoice would have had two totals. Faktura calculates per tax rate, and a test pushes exactly this case through both output paths.</li>
+            <li><strong>The UI only sees data that survived the commit.</strong> Change events are delivered after commit, so a rollback never leaves the UI showing a record that doesn't exist. Anything slow runs in the background.</li>
+          </ul>
+          <figure class="cs-figure">
+            <img src="../assets/faktura/belege-dunkel.png" width="1459" height="892" alt="Faktura documents view in dark mode" loading="lazy" />
+            <figcaption>
+              Documents as master-detail in dark mode. Actions follow the status: this invoice is
+              paid, so <em>Send</em>, <em>Mark as paid</em> and <em>Cancel</em> are disabled.
+            </figcaption>
+          </figure>
+        </section>
+
+        <section class="cs-section">
+          <h2>Approach</h2>
+          <p>
+            Twelve phases across two releases. The order was deliberate: the quality baseline came
+            first, so that every later structural change — swapping the persistence layer,
+            replacing the entire UI toolkit — had a test suite and static analysis
+            <em>underneath</em> it, not beside it.
+          </p>
+          <ul>
+            <li><strong>Version 2.0:</strong> quality baseline (validation, logging, CI, JaCoCo, SpotBugs), Spring IoC, SQLite and Flyway behind the existing repository interfaces, a complete JavaFX rebuild, company profile, EN 16931 e-invoicing, and an MSI installer with a tag-driven release workflow.</li>
+            <li><strong>Version 3.0:</strong> transactional number assignment, background execution, backups via <code>VACUUM INTO</code>, a new UI with dashboard and dark mode, VAT per tax rate, payment tracking, cancellation invoices, issuer snapshots and a cross-platform JAR.</li>
+          </ul>
+        </section>
+
+        <section class="cs-section">
+          <h2>Tech Stack</h2>
+          <ul>
+            <li><strong>Java 21</strong> — records for value types, text blocks for readable SQL.</li>
+            <li><strong>Spring Boot</strong> — not for a web server, but for the IoC container, declarative transactions and transaction-bound events.</li>
+            <li><strong>JavaFX with AtlantaFX</strong> — desktop rather than browser, because running locally is the product promise.</li>
+            <li><strong>SQLite, Spring JDBC and Flyway</strong> — one user, no installation, one file to back up; explicit SQL instead of JPA.</li>
+            <li><strong>Apache PDFBox and Mustang</strong> — a fixed business layout with an embedded font; EN 16931 through a validated library instead of hand-written XML.</li>
+            <li><strong>Maven, JUnit 5, JaCoCo, SpotBugs, GitHub Actions, jpackage</strong> — build, quality assurance and delivery.</li>
+          </ul>
+          <figure class="cs-figure">
+            <img src="../assets/faktura/rechnung-pdf.webp" width="909" height="720" alt="Invoice PDF generated by Faktura" loading="lazy" />
+            <figcaption>
+              Invoice as PDF, with the tax number in the letterhead and VAT per tax rate. All data
+              shown is made-up demo data.
+            </figcaption>
+          </figure>
+        </section>
+
+        <section class="cs-section">
+          <h2>Results</h2>
+          <ul>
+            <li>201 automated tests, all green — up from 71 at the version 1.0 acceptance.</li>
+            <li>Coverage gate in the build: 85% of statements and 70% of branches in non-UI code.</li>
+            <li>Zero SpotBugs findings, enforced by the build rather than just reported.</li>
+            <li>Performance as a test: 5,000 customers, 5,000 products and 1,000 documents against the limits in the requirements (startup ≤ 5 s, search ≤ 1 s, PDF ≤ 2 s).</li>
+            <li>Full traceability: every requirement is mapped to the code and the test case that covers it.</li>
+            <li>One-step delivery: a Git tag builds and publishes the Windows installer and the JAR.</li>
+          </ul>
+        </section>
+
+        <section class="cs-section">
+          <h2>What I Learned</h2>
+          <p>
+            <strong>A counter in memory is not a business rule.</strong> "Gap-free" is a property of
+            how numbers are <em>assigned</em>, not of the numbers you happen to see in the list. For
+            an invariant that has to hold even when things fail, the test that forces the failure
+            <em>is</em> the requirement.
+          </p>
+          <p>
+            <strong>That test paid off a second time.</strong> A harmless-looking interface change
+            routed a call around Spring's transaction proxy. Everything compiled and every
+            functional test stayed green — only the integrity test failed. Without it, the exact bug
+            that version 3.0 fixed would have shipped again.
+          </p>
+          <p>
+            <strong>Rounding is domain logic.</strong> Whether VAT is rounded per item or per tax
+            rate looks like an implementation detail, yet it decides whether two legally required
+            representations of the same invoice agree.
+          </p>
+          <p>
+            <strong>Interfaces make a rebuild survivable.</strong> The repository interfaces from
+            version 1.0 survived the switch from JSON to SQLite unchanged, and the UI-free controller
+            classes survived the switch from Swing to JavaFX.
+          </p>
+          <p>
+            <strong>Green tests don't mean "it works".</strong> Truncated table columns or shortcuts
+            that opened the wrong dialog were invisible to the build and obvious seconds after
+            launching the app. For anything with a UI, looking at it is part of the definition of
+            done.
+          </p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Built with Claude Code</h2>
+          <p>
+            Faktura was built with Claude Code as a tool. It took on the mechanical bulk —
+            package-wide refactorings, scaffolding for repositories, services and tests, UML
+            sources and drafts of the specifications. The decisions were mine: which rules are
+            invariants, that number assignment belongs inside the transaction, what stays from
+            version 1.0, and whether a change was really finished.
+          </p>
+          <p>
+            Every change had to clear the same bar — tests, coverage gate, SpotBugs — and anything
+            visible was checked by launching the app and looking at it.
+          </p>
+        </section>
+
+        <section class="cs-section">
+          <h2>What's Next</h2>
+          <ul>
+            <li>A usability test with five people — the only acceptance criterion that code can't prove.</li>
+            <li>The small-business VAT exemption (§ 19 UStG) and other exemptions, with the required notice.</li>
+            <li>Payment reminders.</li>
+            <li>Installer packages for Linux and macOS.</li>
+          </ul>
+        </section>
+
+      </div><!-- /cs-body en -->
+
+      <!-- Body content: German -->
+      <div class="cs-body" data-lang="de" lang="de">
+
+        <section class="cs-section">
+          <h2>Überblick</h2>
+          <p>
+            Faktura ist eine schlanke Desktop-Anwendung zur Fakturierung für Freiberufler und
+            Kleinstunternehmen. Sie verwaltet Kunden und Produkte und bildet den vollständigen
+            kaufmännischen Dokumentenzyklus ab — Angebot → Auftragsbestätigung → Lieferschein →
+            Rechnung — mit PDF-Ausgabe, E-Rechnung nach EN 16931, lückenlosen Rechnungsnummern und
+            unveränderlichen versendeten Belegen. Alles läuft lokal: keine Cloud, kein Abo, keine
+            Telemetrie.
+          </p>
+          <p>
+            Gestartet ist Faktura im Modul <strong>Software Engineering 1</strong> an der
+            <strong>TH Mannheim</strong> (Sommersemester 2026). 12 Studierende in vier Gruppen
+            haben den vollständigen V-Modell-Prozess durchlaufen — Lastenheft, Pflichtenheft,
+            Entwurf, Modultest, Abnahme —, jede Gruppe mit einer der vier Komponenten. Ich habe
+            dabei das Repository verwaltet und sämtliche Projektdokumente verfasst. Seit
+            Projektabschluss entwickle ich Faktura allein zu einer auslieferbaren Anwendung weiter.
+          </p>
+          <div class="cs-highlight">
+            <p>
+              Stand Version 3.0: rund 12.600 Zeilen Java, 201 automatisierte Tests,
+              Abdeckungsschwelle und SpotBugs im Build erzwungen, Windows-Installer und
+              plattformübergreifendes JAR per Git-Tag veröffentlicht.
+            </p>
+          </div>
+        </section>
+
+        <section class="cs-section">
+          <h2>Das Problem</h2>
+          <p>
+            <strong>Fakturierung ist ein Compliance-Problem im CRUD-Gewand.</strong>
+            Tabellenkalkulationen sind kostenlos, aber nicht rechtssicher. SaaS-Lösungen kosten
+            dauerhaft Miete für wenige Belege im Monat und legen Kundendaten auf fremde Server.
+            Open-Source-Alternativen verlangen Einrichtungs- und Wartungsaufwand von jemandem,
+            dessen Beruf nicht IT ist. Dazu kommt die E-Rechnung: Seit 2025 muss jedes Unternehmen
+            strukturierte Rechnungen empfangen können, ab 2027/2028 auch ausstellen — ein PDF
+            genügt dann nicht mehr.
+          </p>
+          <p>
+            Die Masken sehen aus wie gewöhnliches CRUD. Darunter liegen Regeln, die
+            <em>immer</em> gelten müssen, nicht meistens:
+          </p>
+          <ul>
+            <li><strong>GoBD, Lückenlosigkeit:</strong> Keine Rechnungsnummer darf verloren gehen, auch nicht bei einem Fehler beim Speichern.</li>
+            <li><strong>GoBD, Unveränderbarkeit:</strong> Eine versendete Rechnung wird nie geändert oder gelöscht, sondern durch eine Stornorechnung ausgeglichen.</li>
+            <li><strong>§ 14 UStG:</strong> Pflichtangaben auf jeder Rechnung, darunter Steuernummer oder USt-IdNr. und die Steuer je Steuersatz.</li>
+            <li><strong>EN 16931:</strong> Strukturiertes XML zusätzlich zum PDF — mit exakt denselben Beträgen.</li>
+            <li><strong>DSGVO:</strong> Kundendaten bleiben auf dem Rechner.</li>
+          </ul>
+          <p>
+            <strong>Ein abgenommenes Projekt ist noch kein Produkt.</strong> Version 1.0 bestand
+            die Abnahme — alle Muss-Anforderungen umgesetzt, 71 von 71 Modultestfällen grün.
+            Auslieferbar war sie trotzdem nicht:
+          </p>
+          <ul>
+            <li>Die Daten lagen in JSON-Dateien, die bei jeder Änderung vollständig neu geschrieben wurden.</li>
+            <li>Der Rechnungszähler war eine Zahl im Speicher und wurde <em>vor</em> dem Speichern erhöht. Schlug das Speichern fehl, war die Nummer verbraucht — ein stiller Verstoß gegen genau die Regel, auf die es am meisten ankommt.</li>
+            <li>Manuelle Dependency Injection und eine Swing-Oberfläche, die bei jedem PDF-Export einfror.</li>
+            <li>Die E-Rechnung, also das gesetzlich Geforderte, war ausdrückliches Nichtziel.</li>
+          </ul>
+          <p>
+            Das eigentliche Projekt war deshalb: eine Codebasis, die <em>funktioniert</em>, so
+            umzubauen, dass sie <em>trägt</em> — ohne die Teile wegzuwerfen, die ihren Platz
+            verdient haben.
+          </p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Fünf Entscheidungen, die die Regeln tragen</h2>
+          <p>Bei jeder war die naheliegende Umsetzung die falsche.</p>
+          <ul>
+            <li><strong>Lückenlose Nummern als Datenbank-Invariante.</strong> Die Nummernvergabe läuft in derselben Transaktion wie das Speichern des Belegs; ein fehlgeschlagenes Speichern rollt sie mit zurück. Ein Test erzwingt genau diesen Fehler und prüft, dass keine Lücke entsteht.</li>
+            <li><strong>Versendete Belege sind unveränderlich.</strong> Statt zu ändern oder zu löschen, entsteht eine Stornorechnung — mit eigener Nummer, negativen Mengen, Verweis auf das Original und als E-Rechnung vom Typ 384 (korrigierte Rechnung).</li>
+            <li><strong>Snapshots statt Verweise.</strong> Jeder Beleg speichert Kunde, Aussteller und Preise so, wie sie beim Erstellen galten. Ein Umzug oder Bankwechsel schreibt keine alten Rechnungen um.</li>
+            <li><strong>PDF und E-Rechnung stimmen auf den Cent überein.</strong> Version 1.0 rundete die Steuer je Position, die Norm rechnet je Steuersatz. Bei zehn Positionen zu je 1,10 € ergibt das 2,10 € gegenüber 2,09 € — dieselbe Rechnung hätte zwei Endbeträge gehabt. Faktura rechnet je Steuersatz, und ein Test schickt genau diesen Fall durch beide Ausgabewege.</li>
+            <li><strong>Die Oberfläche sieht nur, was den Commit überlebt hat.</strong> Änderungsereignisse werden erst nach dem Commit zugestellt, damit nach einem Rollback kein Datensatz angezeigt wird, den es nicht gibt. Alles, was dauern kann, läuft im Hintergrund.</li>
+          </ul>
+          <figure class="cs-figure">
+            <img src="../assets/faktura/belege-dunkel.png" width="1459" height="892" alt="Belegansicht von Faktura im dunklen Erscheinungsbild" loading="lazy" />
+            <figcaption>
+              Belege als Master-Detail im dunklen Erscheinungsbild. Die Aktionen richten sich nach
+              dem Status: Diese Rechnung ist bezahlt, deshalb sind <em>Versenden</em>,
+              <em>Bezahlt</em> und <em>Stornieren</em> gesperrt.
+            </figcaption>
+          </figure>
+        </section>
+
+        <section class="cs-section">
+          <h2>Vorgehen</h2>
+          <p>
+            Zwölf Phasen in zwei Releases. Die Reihenfolge war bewusst gewählt: Die
+            Qualitäts-Baseline kam zuerst, damit jeder folgende strukturelle Eingriff — Austausch
+            der Persistenzschicht, Ersetzen des gesamten UI-Toolkits — eine Testsuite und eine
+            statische Analyse <em>unter</em> sich hatte, nicht daneben.
+          </p>
+          <ul>
+            <li><strong>Version 2.0:</strong> Qualitäts-Baseline (Validierung, Logging, CI, JaCoCo, SpotBugs), Spring-IoC, SQLite und Flyway hinter den bestehenden Repository-Schnittstellen, vollständiger JavaFX-Neubau, Firmenprofil, E-Rechnung nach EN 16931, MSI-Installer mit Tag-gesteuertem Release-Workflow.</li>
+            <li><strong>Version 3.0:</strong> transaktionale Nummernvergabe, Hintergrundausführung, Datensicherung über <code>VACUUM INTO</code>, neue Oberfläche mit Übersicht und Dunkelmodus, Steuer je Steuersatz, Zahlungseingang, Stornorechnung, Aussteller-Snapshot und ein plattformübergreifendes JAR.</li>
+          </ul>
+        </section>
+
+        <section class="cs-section">
+          <h2>Technik</h2>
+          <ul>
+            <li><strong>Java 21</strong> — Records für Wertetypen, Textblöcke für lesbares SQL.</li>
+            <li><strong>Spring Boot</strong> — nicht wegen eines Webservers, sondern wegen IoC-Container, deklarativer Transaktionen und transaktionsgebundener Ereignisse.</li>
+            <li><strong>JavaFX mit AtlantaFX</strong> — Desktop statt Browser, weil lokaler Betrieb das Produktversprechen ist.</li>
+            <li><strong>SQLite, Spring JDBC und Flyway</strong> — ein Benutzer, keine Installation, eine Datei zum Sichern; explizites SQL statt JPA.</li>
+            <li><strong>Apache PDFBox und Mustang</strong> — festes kaufmännisches Layout mit eingebetteter Schrift; EN 16931 über eine validierte Bibliothek statt handgeschriebenem XML.</li>
+            <li><strong>Maven, JUnit 5, JaCoCo, SpotBugs, GitHub Actions, jpackage</strong> — Build, Qualitätssicherung und Auslieferung.</li>
+          </ul>
+          <figure class="cs-figure">
+            <img src="../assets/faktura/rechnung-pdf.webp" width="909" height="720" alt="Von Faktura erzeugte Rechnung als PDF" loading="lazy" />
+            <figcaption>
+              Rechnung als PDF, mit Steuernummer im Briefkopf und Umsatzsteuer je Steuersatz.
+              Alle gezeigten Daten sind erfundene Demodaten.
+            </figcaption>
+          </figure>
+        </section>
+
+        <section class="cs-section">
+          <h2>Ergebnisse</h2>
+          <ul>
+            <li>201 automatisierte Tests, alle grün — zur Abnahme der Version 1.0 waren es 71.</li>
+            <li>Abdeckungsschwelle im Build: 85 % Anweisungen und 70 % Zweige im nicht-grafischen Code.</li>
+            <li>SpotBugs ohne Befunde, im Build erzwungen statt nur berichtet.</li>
+            <li>Performance als Test: 5.000 Kunden, 5.000 Produkte und 1.000 Belege gegen die Grenzwerte des Lastenhefts (Start ≤ 5 s, Suche ≤ 1 s, PDF ≤ 2 s).</li>
+            <li>Vollständige Nachvollziehbarkeit: Jede Anforderung ist auf Code und Testfall abgebildet.</li>
+            <li>Auslieferung auf Knopfdruck: Ein Git-Tag baut und veröffentlicht Windows-Installer und JAR.</li>
+          </ul>
+        </section>
+
+        <section class="cs-section">
+          <h2>Was ich gelernt habe</h2>
+          <p>
+            <strong>Ein Zähler im Speicher ist keine Geschäftsregel.</strong> „Lückenlos“ ist eine
+            Eigenschaft der <em>Vergabe</em>, nicht der Nummern, die man zufällig in der Liste
+            sieht. Bei einer Invariante, die auch im Fehlerfall halten muss, ist der Test, der den
+            Fehler erzwingt, die eigentliche Anforderung.
+          </p>
+          <p>
+            <strong>Dieser Test hat sich später noch einmal ausgezahlt.</strong> Eine harmlos
+            wirkende Schnittstellenänderung ließ einen Aufruf am Transaktions-Proxy von Spring
+            vorbeilaufen. Alles kompilierte, alle fachlichen Tests blieben grün — nur der
+            Integritätstest schlug an. Ohne ihn wäre genau der Fehler zurückgekehrt, den
+            Version 3.0 behoben hatte.
+          </p>
+          <p>
+            <strong>Rundung ist Fachlichkeit.</strong> Ob je Position oder je Steuersatz gerundet
+            wird, wirkt wie ein Implementierungsdetail und entscheidet doch, ob zwei gesetzlich
+            geforderte Darstellungen derselben Rechnung übereinstimmen.
+          </p>
+          <p>
+            <strong>Schnittstellen machen einen Umbau überlebbar.</strong> Die
+            Repository-Schnittstellen aus Version 1.0 überstanden den Wechsel von JSON auf SQLite
+            unverändert, die GUI-freien Controller-Klassen den Wechsel von Swing auf JavaFX.
+          </p>
+          <p>
+            <strong>Grüne Tests heißen nicht „funktioniert“.</strong> Abgeschnittene
+            Tabellenspalten oder Tastenkürzel, die den falschen Dialog öffneten, waren für den
+            Build unsichtbar und nach dem Start der Anwendung sofort offensichtlich. Bei allem mit
+            Oberfläche gehört das Hinsehen zur Definition von „fertig“.
+          </p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Mit Claude Code entwickelt</h2>
+          <p>
+            Faktura ist mit Claude Code als Werkzeug entstanden. Es hat die mechanische Masse
+            übernommen — paketweite Umbauten, Gerüste für Repositories, Services und Tests,
+            UML-Quellen und Entwürfe der Spezifikationen. Die Entscheidungen lagen bei mir: welche
+            Regeln Invarianten sind, dass die Nummernvergabe in die Transaktion gehört, was aus
+            Version 1.0 bleibt und ob eine Änderung wirklich fertig war.
+          </p>
+          <p>
+            Jede Änderung musste dieselben Hürden nehmen — Tests, Abdeckungsschwelle, SpotBugs —,
+            und alles Sichtbare wurde durch Starten und Hinsehen geprüft.
+          </p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Ausblick</h2>
+          <ul>
+            <li>Usability-Test mit fünf Personen — das einzige Abnahmekriterium, das Code nicht belegen kann.</li>
+            <li>Kleinunternehmerregelung (§ 19 UStG) und Steuerbefreiungen mit Pflichthinweis.</li>
+            <li>Mahnwesen.</li>
+            <li>Installationspakete für Linux und macOS.</li>
+          </ul>
+        </section>
+
+      </div><!-- /cs-body de -->
+
+      <!-- Bottom navigation -->
+      <div class="cs-nav">
+        <a href="../index.html#projects">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          <span data-i18n="back.allProjects">All Projects</span>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p><span data-i18n="footer.built">Designed &amp; built by Lucas Strubel</span> &mdash; <span id="year"></span></p>
+    </div>
+  </footer>
+
+  <script src="../theme.js"></script>
+  <script src="../lang.js"></script>
+  <script src="../script.js"></script>
+
+</body>
+</html>
