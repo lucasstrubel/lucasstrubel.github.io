@@ -2,60 +2,86 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <script>(function(){var s=localStorage.getItem('theme');var p=s?s:(window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');if(p==='light')document.documentElement.setAttribute('data-theme','light');}());</script>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <script src="../init.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Fluency: The Skill That Actually Matters Right Now — Lucas Strubel</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <title data-i18n="title.fluency">AI Fluency: The Skill That Actually Matters Right Now — Lucas Strubel</title>
+  <meta name="description" content="Why knowing how to work with AI tools is becoming a baseline expectation — and what it really means to be fluent, not just a user." />
+  <link rel="icon" type="image/png" href="../favicon.png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <link rel="canonical" href="https://lucasstrubel.github.io/blog/ai-fluency.html" />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2026-05" />
+  <meta property="article:author" content="Lucas Strubel" />
+  <meta property="og:site_name" content="Lucas Strubel" />
+  <meta property="og:title" content="AI Fluency: The Skill That Actually Matters Right Now" />
+  <meta property="og:description" content="Why knowing how to work with AI tools is becoming a baseline expectation — and what it really means to be fluent, not just a user." />
+  <meta property="og:url" content="https://lucasstrubel.github.io/blog/ai-fluency.html" />
+  <meta property="og:image" content="https://lucasstrubel.github.io/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Lucas Strubel — Business Informatics · Portfolio" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="de_DE" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="../assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="../style.css" />
 </head>
 <body class="cs-page">
 
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
   <nav class="nav scrolled" id="nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-logo">LS</a>
-      <ul class="nav-links">
-        <li><a href="../index.html#about">About</a></li>
-        <li><a href="../index.html#skills">Skills</a></li>
-        <li><a href="../index.html#projects">Projects</a></li>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html#about" data-i18n="nav.about">About</a></li>
+        <li><a href="../index.html#skills" data-i18n="nav.skills">Skills</a></li>
+        <li><a href="../index.html#projects" data-i18n="nav.projects">Projects</a></li>
         <li><a href="../index.html#blog">Blog</a></li>
-        <li><a href="../index.html#contact">Contact</a></li>
+        <li><a href="../index.html#contact" data-i18n="nav.contact">Contact</a></li>
       </ul>
-      <button class="theme-toggle" id="themeToggle" aria-label="Switch color theme">
+      <div class="nav-actions">
+        <button class="lang-toggle" id="langToggle" aria-label="DE/EN – Switch language" data-i18n-attr="aria-label:a11y.lang">
+          <span class="lang-opt-de">DE</span><span class="lang-sep">/</span><span class="lang-opt-en">EN</span>
+        </button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch color theme" data-i18n-attr="aria-label:a11y.theme">
         <svg class="icon-moon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
         <svg class="icon-sun" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
       </button>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu" data-i18n-attr="aria-label:a11y.menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <main>
+  <main id="main">
     <div class="container">
 
       <a href="../index.html#blog" class="post-back">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-        Back to Blog
+        <span data-i18n="back.blog">Back to Blog</span>
       </a>
 
       <div class="post-meta-top">
         <span class="blog-category">Essay</span>
-        <span class="blog-meta">May 2026 &middot; 5 min read</span>
+        <span class="blog-meta" data-i18n="post.fluency.meta">May 2026 &middot; 5 min read</span>
       </div>
 
-      <h1 class="post-title">AI Fluency: The Skill That Actually Matters Right Now</h1>
+      <h1 class="post-title" data-i18n="post.fluency.title">AI Fluency: The Skill That Actually Matters Right Now</h1>
 
       <div class="post-tags">
-        <span>AI</span>
-        <span>Productivity</span>
-        <span>Skills</span>
+        <span data-i18n="tag.ai">AI</span>
+        <span data-i18n="tag.productivity">Productivity</span>
+        <span data-i18n="tag.skills">Skills</span>
       </div>
 
       <hr class="post-divider" />
 
-      <div class="cs-body">
+      <div class="cs-body" data-lang="en">
 
         <section class="cs-section">
           <h2>The Shift Nobody Warned Us About</h2>
@@ -124,10 +150,79 @@
 
       </div>
 
+      <div class="cs-body" data-lang="de" lang="de">
+
+        <section class="cs-section">
+          <h2>Der Wandel, vor dem uns niemand gewarnt hat</h2>
+          <p>
+            Vor einem Jahr war es ein nettes Extra, ChatGPT bedienen zu können. Heute fühlt es sich zunehmend so an, als würde man ohne Excel-Kenntnisse in einem Tabellenjob anfangen, wenn man nicht effektiv mit KI-Werkzeugen arbeiten kann. Die Messlatte hat sich schnell verschoben — und leise.
+          </p>
+          <p>
+            Was mich überrascht, ist, wie viele Menschen KI immer noch wie eine Suchmaschine mit besserem Satzbau behandeln. Sie stellen eine Frage, bekommen eine Antwort, übernehmen sie oder verwerfen sie und machen weiter. Das ist KI benutzen. Es ist nicht, sie zu beherrschen.
+          </p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Was Kompetenz wirklich bedeutet</h2>
+          <p>
+            Eine Sprache fließend zu sprechen heißt, dass man aufhört zu übersetzen und anfängt, in ihr zu denken. Man baut einen Satz nicht erst im Kopf und überträgt ihn dann — er kommt einfach. Mit KI ist es ähnlich: Man hört auf, das Modell als Blackbox zu behandeln, die man abfragt, und beginnt, es als Mitarbeiter zu sehen, den man anleitet.
+          </p>
+          <p>
+            In der Praxis zeigt sich das an ein paar Dingen:
+          </p>
+          <ul>
+            <li><strong>Wissen, was man delegiert.</strong> Nicht alles gehört in einen Prompt. Wer KI souverän nutzt, hat ein Gespür dafür, welche Aufgaben sie gut erledigt (Entwürfe, Zusammenfassungen, Optionen entwickeln, Konzepte erklären) und welche schlecht (präzises Rechnen, aktuelle Fakten, Abwägungen, die Kontext brauchen, den man nicht mitgegeben hat).</li>
+            <li><strong>Prompts als Anweisungen formulieren, nicht als Fragen.</strong> „Wie könnte ich das verbessern?“ liefert Allgemeinplätze. „Prüfe diesen Absatz auf Verständlichkeit. Markiere jeden Satz, den man mehr als zweimal lesen muss. Schreibe nur diese Sätze neu.“ liefert etwas Brauchbares.</li>
+            <li><strong>Iterieren statt übernehmen.</strong> Die erste Antwort ist selten die letzte. Wer KI beherrscht, behandelt die Ausgabe als ersten Entwurf und weiß, wie man nachsteuert: „mach es kürzer“, „der zweite Punkt ist falsch — hier ist die richtige Randbedingung“, „schreib das jetzt für ein nicht-technisches Publikum“.</li>
+            <li><strong>Kritische Distanz wahren.</strong> KI klingt auch dann überzeugt, wenn sie falsch liegt. Wer sie souverän nutzt, prüft Aussagen, auf die es ankommt, fängt Halluzinationen ab, bevor sie sich verbreiten, und lagert nie das Urteil aus — nur die Ausführung.</li>
+          </ul>
+        </section>
+
+        <section class="cs-section">
+          <h2>Warum das wichtiger ist als die Werkzeuge zu kennen</h2>
+          <p>
+            Das konkrete Werkzeug spielt kaum eine Rolle. ChatGPT, Claude, Gemini, Copilot — die zugrunde liegende Fähigkeit lässt sich auf alle übertragen, weil es nicht um Bedienwissen geht. Es geht darum, eine Aufgabe zu zerlegen, präzise zu formulieren, was man will, und zu beurteilen, ob man es bekommen hat.
+          </p>
+          <p>
+            Diese Fähigkeiten waren schon immer wertvoll. KI macht sie nur sichtbarer. Wer ein unklares Problem in eine klare, abgegrenzte Aufgabe verwandeln kann, war schon immer nützlicher als jemand, der das nicht kann. Jetzt zeigt sich dieser Unterschied sofort — in jeder einzelnen Interaktion mit einem Modell.
+          </p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Was ich an meiner eigenen Arbeitsweise geändert habe</h2>
+          <p>
+            Ich habe angefangen, KI als Mitarbeiter für den ersten Durchgang zu sehen — gut darin, schnell etwas aufs Papier zu bringen, schlecht darin zu wissen, was „gut“ in meinem konkreten Kontext bedeutet. Diese Unterscheidung hat verändert, wie ich sie nutze.
+          </p>
+          <p>
+            Beim Schreiben: Die Gliederung erstelle ich selbst, dann lasse ich KI einzelne Abschnitte ausbauen und überarbeite anschließend gründlich. Die Struktur bleibt meine; die KI beschleunigt die Teile, die ich mühsam finde.
+          </p>
+          <p>
+            Beim Programmieren: Ich beschreibe in einfacher Sprache, was ich brauche, prüfe jede Zeile der Ausgabe und behandle sie wie Code von einem Junior-Entwickler — hilfreich, aber erst vertrauenswürdig, wenn sie geprüft ist.
+          </p>
+          <p>
+            Bei der Recherche: Ich nutze KI, um mir einen ersten Überblick über ein Thema zu verschaffen — zentrale Begriffe, gängige Modelle, lohnende Fragen —, nicht als Quelle für Fakten. Die Fakten kommen aus Primärquellen.
+          </p>
+          <p>
+            Das Muster ist in allen drei Fällen dasselbe: Die KI erzeugt, ich urteile. Genau diese Aufteilung macht die Arbeit tatsächlich schneller und nicht nur anders.
+          </p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Die Messlatte steigt</h2>
+          <p>
+            Ehrlich gesagt: KI-Kompetenz wird aufhören, ein Unterscheidungsmerkmal zu sein, und zur Mindesterwartung werden — wahrscheinlich früher, als die meisten denken. Die Frage ist, ob man sie jetzt bewusst aufbaut oder später hektisch aufholen muss.
+          </p>
+          <p>
+            Die gute Nachricht: Dafür braucht es weder einen Kurs noch ein Zertifikat. Es braucht nur, diese Werkzeuge ernsthaft zu nutzen, darüber nachzudenken, wo sie geholfen und wo sie versagt haben, und die eigene Anleitung entsprechend anzupassen. Das ist alles. Die Lernschleife ist kurz, wenn man auf sie achtet.
+          </p>
+        </section>
+
+      </div>
+
       <div class="cs-nav">
         <a href="../index.html#blog">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-          All Posts
+          <span data-i18n="back.allPosts">All Posts</span>
         </a>
       </div>
 
@@ -136,18 +231,13 @@
 
   <footer class="footer">
     <div class="container">
-      <p>Designed &amp; built by Lucas Strubel &mdash; <span id="year"></span></p>
+      <p><span data-i18n="footer.built">Designed &amp; built by Lucas Strubel</span> &mdash; <span id="year"></span></p>
     </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const navToggle = document.getElementById('navToggle');
-    const navLinks  = document.querySelector('.nav-links');
-    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-    navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('open')));
-  </script>
   <script src="../theme.js"></script>
+  <script src="../lang.js"></script>
+  <script src="../script.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <script src="/init.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="title.404">Page not found — Lucas Strubel</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <!-- Served by GitHub Pages at any missing URL, so every path here is root-absolute -->
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body class="cs-page">
+
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">LS</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/#about" data-i18n="nav.about">About</a></li>
+        <li><a href="/#skills" data-i18n="nav.skills">Skills</a></li>
+        <li><a href="/#projects" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="/#blog">Blog</a></li>
+        <li><a href="/#contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="lang-toggle" id="langToggle" aria-label="DE/EN – Switch language" data-i18n-attr="aria-label:a11y.lang">
+          <span class="lang-opt-de">DE</span><span class="lang-sep">/</span><span class="lang-opt-en">EN</span>
+        </button>
+        <button class="theme-toggle" id="themeToggle" aria-label="Switch color theme" data-i18n-attr="aria-label:a11y.theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu" data-i18n-attr="aria-label:a11y.menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="notfound" id="main">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+    </div>
+    <p class="notfound-code">404</p>
+    <h1 class="notfound-title" data-i18n="nf.title">Page not found</h1>
+    <p class="notfound-text" data-i18n="nf.text">This page doesn't exist (anymore). Maybe it moved — or the link had a typo.</p>
+    <a href="/" class="btn btn-primary">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      <span data-i18n="nf.home">Back to the homepage</span>
+    </a>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p><span data-i18n="footer.built">Designed &amp; built by Lucas Strubel</span> &mdash; <span id="year"></span></p>
+    </div>
+  </footer>
+
+  <script src="/theme.js"></script>
+  <script src="/lang.js"></script>
+  <script src="/script.js"></script>
+
+</body>
+</html>

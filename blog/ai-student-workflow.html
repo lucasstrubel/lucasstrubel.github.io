@@ -2,60 +2,86 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <script>(function(){var s=localStorage.getItem('theme');var p=s?s:(window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');if(p==='light')document.documentElement.setAttribute('data-theme','light');}());</script>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <script src="../init.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How I Actually Use AI as a Student — Lucas Strubel</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <title data-i18n="title.workflow">How I Actually Use AI as a Student — Lucas Strubel</title>
+  <meta name="description" content="A practical account of integrating AI into studying, writing, and coding — and where drawing the line matters more than most tutorials admit." />
+  <link rel="icon" type="image/png" href="../favicon.png" />
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+  <link rel="canonical" href="https://lucasstrubel.github.io/blog/ai-student-workflow.html" />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2025-12" />
+  <meta property="article:author" content="Lucas Strubel" />
+  <meta property="og:site_name" content="Lucas Strubel" />
+  <meta property="og:title" content="How I Actually Use AI as a Student" />
+  <meta property="og:description" content="A practical account of integrating AI into studying, writing, and coding — and where drawing the line matters more than most tutorials admit." />
+  <meta property="og:url" content="https://lucasstrubel.github.io/blog/ai-student-workflow.html" />
+  <meta property="og:image" content="https://lucasstrubel.github.io/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Lucas Strubel — Business Informatics · Portfolio" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="de_DE" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="../assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="../style.css" />
 </head>
 <body class="cs-page">
 
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
   <nav class="nav scrolled" id="nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-logo">LS</a>
-      <ul class="nav-links">
-        <li><a href="../index.html#about">About</a></li>
-        <li><a href="../index.html#skills">Skills</a></li>
-        <li><a href="../index.html#projects">Projects</a></li>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html#about" data-i18n="nav.about">About</a></li>
+        <li><a href="../index.html#skills" data-i18n="nav.skills">Skills</a></li>
+        <li><a href="../index.html#projects" data-i18n="nav.projects">Projects</a></li>
         <li><a href="../index.html#blog">Blog</a></li>
-        <li><a href="../index.html#contact">Contact</a></li>
+        <li><a href="../index.html#contact" data-i18n="nav.contact">Contact</a></li>
       </ul>
-      <button class="theme-toggle" id="themeToggle" aria-label="Switch color theme">
+      <div class="nav-actions">
+        <button class="lang-toggle" id="langToggle" aria-label="DE/EN – Switch language" data-i18n-attr="aria-label:a11y.lang">
+          <span class="lang-opt-de">DE</span><span class="lang-sep">/</span><span class="lang-opt-en">EN</span>
+        </button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch color theme" data-i18n-attr="aria-label:a11y.theme">
         <svg class="icon-moon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
         <svg class="icon-sun" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
       </button>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu" data-i18n-attr="aria-label:a11y.menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <main>
+  <main id="main">
     <div class="container">
 
       <a href="../index.html#blog" class="post-back">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-        Back to Blog
+        <span data-i18n="back.blog">Back to Blog</span>
       </a>
 
       <div class="post-meta-top">
         <span class="blog-category">Workflow</span>
-        <span class="blog-meta">December 2025 &middot; 6 min read</span>
+        <span class="blog-meta" data-i18n="post.workflow.meta">December 2025 &middot; 6 min read</span>
       </div>
 
-      <h1 class="post-title">How I Actually Use AI as a Student</h1>
+      <h1 class="post-title" data-i18n="post.workflow.title">How I Actually Use AI as a Student</h1>
 
       <div class="post-tags">
-        <span>AI</span>
-        <span>Student Life</span>
-        <span>Productivity</span>
+        <span data-i18n="tag.ai">AI</span>
+        <span data-i18n="tag.student">Student Life</span>
+        <span data-i18n="tag.productivity">Productivity</span>
       </div>
 
       <hr class="post-divider" />
 
-      <div class="cs-body">
+      <div class="cs-body" data-lang="en">
 
         <section class="cs-section">
           <h2>The Honest Starting Point</h2>
@@ -150,10 +176,105 @@
 
       </div>
 
+      <div class="cs-body" data-lang="de" lang="de">
+
+        <section class="cs-section">
+          <h2>Der ehrliche Ausgangspunkt</h2>
+          <p>
+            Anfangs war ich skeptisch. Nicht gegenüber KI an sich, sondern gegenüber der Art, wie darüber gesprochen wurde — als würde sie einem die Arbeit abnehmen, ohne dass es jemand merkt. Diese Sichtweise kam mir immer schief vor. Sie klang außerdem nach einem guten Weg, einen Abschluss zu machen, ohne tatsächlich etwas zu können.
+          </p>
+          <p>
+            Umgestimmt hat mich kein Produktivitätstrick und kein YouTube-Tutorial, sondern eine Deadline. Ich hatte drei Abgaben in derselben Woche und eine Lerngruppe, die sich gerade aufgelöst hatte. Ich musste schneller arbeiten, ohne schlechtere Ergebnisse abzuliefern. Dieser Druck hat mich gezwungen, sehr schnell herauszufinden, wofür KI tatsächlich nützlich ist und wofür nicht.
+          </p>
+          <p>
+            Sechs Monate später steckt KI in den meisten meiner Studienaufgaben. Aber die Art, wie ich sie nutze, hat wenig mit dem zu tun, was sich die meisten vorstellen, wenn sie „Studierende nutzen KI“ hören.
+          </p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Vorlesungsstoff schneller verstehen</h2>
+          <p>
+            Wirtschaftsinformatik besteht aus vielen Konzepten an der Schnittstelle von IT und Management — Themen, bei denen die Lehrbucherklärung entweder zu abstrakt oder zu oberflächlich ist, je nachdem, aus welcher Richtung man kommt. Oft habe ich die Worte verstanden, aber nicht den Punkt.
+          </p>
+          <p>
+            Meine Lösung: Nach einer Vorlesung schreibe ich eine kurze Zusammenfassung dessen, was ich verstanden zu haben glaube, und gebe sie Claude mit der Aufforderung „Finde die Lücken in meinem Verständnis dieses Konzepts.“ Meistens kommen ein oder zwei Dinge zum Vorschein, die ich übergangen oder leicht falsch verstanden habe. Diese Rückmeldung ist schneller und gezielter, als den Foliensatz noch einmal durchzulesen.
+          </p>
+          <p>
+            Außerdem lasse ich mir Beispiele erzeugen. Abstrakte Modelle verinnerlicht man viel leichter, wenn man sie an einem konkreten Fall sieht. „Gib mir drei Beispiele für dieses Prozessmodell in einem mittelgroßen Logistikunternehmen“ kostet zehn Sekunden und liefert meistens etwas, mit dem ich weiterdenken kann.
+          </p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Hausarbeiten schreiben, ohne sie von KI schreiben zu lassen</h2>
+          <p>
+            Hier ist die Unterscheidung am wichtigsten, und hier liegen meiner Meinung nach viele Studierende in beide Richtungen falsch — entweder überlassen sie dem Modell alles, oder sie verzichten aus einem Prinzip darauf, das ihnen beim Lernen gar nicht hilft.
+          </p>
+          <p>
+            Mein Vorgehen bei schriftlichen Arbeiten sieht so aus:
+          </p>
+          <ul>
+            <li><strong>Zuerst die Gliederung, allein.</strong> Ich baue die Struktur meiner Argumentation, bevor ich irgendein KI-Werkzeug öffne. Das zwingt mich, tatsächlich eine Position zu haben, statt nur Platz zu füllen.</li>
+            <li><strong>Einen Rohentwurf schreiben, allein.</strong> Selbst ein schlechter Entwurf macht die nächsten Schritte nützlicher. Lasse ich ihn aus, überarbeite ich am Ende die Argumentation von jemand anderem — das ist akademisch unredlich und schlechter für mein eigenes Verständnis.</li>
+            <li><strong>KI für gezielte Überarbeitungsdurchgänge nutzen.</strong> Ich bitte Claude, unklare Sätze zu markieren, Lücken in meiner Argumentation aufzuzeigen oder ein präziseres Wort für etwas vorzuschlagen, bei dem ich vage geblieben bin. Das behandle ich wie Anmerkungen eines Lektorats, nicht wie Korrekturen, die man ungeprüft übernimmt.</li>
+            <li><strong>Von Hand neu formulieren.</strong> Jede Änderung, die ich übernehme, formuliere ich in eigenen Worten. Der Text ist meiner, auch wenn der Vorschlag es nicht war.</li>
+          </ul>
+          <p>
+            Das dauert länger, als einfach einen Aufsatz generieren zu lassen — und genau darum geht es. Das Ziel ist nicht, effizient Text zu produzieren, sondern Text, den ich wirklich verstehe und im Seminar verteidigen kann.
+          </p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Programmieren und Datenarbeit</h2>
+          <p>
+            Bei Datenanalyse und Programmieraufgaben hat mir KI auf legitime Weise am meisten Zeit gespart. Syntaxfehler zu suchen und Funktionssignaturen nachzuschlagen hat früher unverhältnismäßig viel Zeit gekostet, gemessen daran, wie wenig ich dabei gelernt habe. Heute beschreibe ich in einfacher Sprache, was ich brauche, bekomme einen funktionierenden Ausgangspunkt und verbringe meine Zeit damit, die Logik zu verstehen und anzupassen, statt mit der Dokumentation zu kämpfen.
+          </p>
+          <p>
+            Meine Regel: Ich gebe keinen Code ab, den ich nicht Zeile für Zeile erklären kann. Wenn ein Modell etwas erzeugt und ich einen Abschnitt nicht verstehe, lasse ich ihn mir erklären — und wenn die Erklärung nicht hängen bleibt, schreibe ich den Teil selbst neu, bis sie es tut. Das ist langsamer als Kopieren und Einfügen, aber so baue ich tatsächlich Fähigkeiten auf statt einer Sammlung von Code, den ich nicht reproduzieren kann.
+          </p>
+          <p>
+            Auch mein Umgang mit Fehlern hat sich geändert. Früher habe ich als Erstes die Fehlermeldung gegoogelt. Heute beschreibe ich den Fehler im Kontext — „diese Funktion soll X tun, stattdessen tut sie Folgendes, und das sind die Daten, die sie bekommt“ — und bekomme eine gezielte Hypothese statt eines Stack-Overflow-Threads von 2016.
+          </p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Prüfungsvorbereitung</h2>
+          <p>
+            Hier hat mich KI am meisten überrascht. Ich lasse mir Übungsfragen zu Stoff erstellen, den ich bereits wiederholt habe — nicht als Ersatz für Karteikarten, sondern um Konzepten in neuen Formulierungen zu begegnen. Eine Frage zu Porters Five Forces als Fallanalyse fühlt sich ganz anders an als dieselbe Frage als Lückentext zur Definition.
+          </p>
+          <p>
+            Außerdem nutze ich sie für das, was ich „Advocatus-Diaboli-Runden“ vor Prüfungen nenne. Ich schildere mein Verständnis eines Konzepts und bitte das Modell, es zu hinterfragen: „So verstehe ich die Transaktionskostentheorie — was fehlt mir oder was vereinfache ich zu stark?“ Der Widerspruch fördert Annahmen zutage, von denen ich nicht wusste, dass ich sie treffe. Genau das leistet eine gute Seminardiskussion — nur eben auch um Mitternacht vor der Prüfung.
+          </p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Wofür ich sie nicht nutze</h2>
+          <p>
+            Ich lasse mir keine ersten Entwürfe schriftlicher Arbeiten erstellen. Ich nutze KI nicht, um Meinungen zu bilden, die ich mir selbst bilden sollte. Und ich schlage damit keine Fakten nach, die ich wirklich wissen muss — Vorlesungsinhalte, zentrale Modelle, Zahlen, die in Prüfungen vorkommen —, denn durch aktives Abrufen entsteht Erinnerung, und wer das auslagert, verfehlt den Sinn des Lernens.
+          </p>
+          <p>
+            Ich versuche auch, sie nicht zu nutzen, wenn ich mir bei etwas unsicher bin und es eine Weile bleiben sollte. In diesem Unbehagen findet oft das eigentliche Denken statt. Wer es zu schnell mit einem Modell auflöst, landet meist bei einem oberflächlichen Verständnis, das bei der ersten Nachfrage zusammenbricht.
+          </p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Das zugrunde liegende Prinzip</h2>
+          <p>
+            Alles, wofür ich KI nutze, muss einen Test bestehen: Macht mich das in der Sache besser, oder erzeugt es nur ein Ergebnis, das so aussieht, als hätte ich die Sache gemacht? Es ist ein Unterschied, ob man einen Taschenrechner nutzt, um sich das Rechnen zu sparen und sich auf das Modell zu konzentrieren, oder weil man nie gelernt hat zu multiplizieren. Ich will zur ersten Gruppe gehören.
+          </p>
+          <p>
+            Diese Unterscheidung fällt leichter, sobald man entschieden hat, was man aus dem Studium eigentlich mitnehmen will. Für mich ist das die Fähigkeit, klar über komplexe Systeme nachzudenken, präzise zu schreiben und Dinge zu bauen, die funktionieren. KI beschleunigt all das, wenn ich sie richtig einsetze — und untergräbt all das, wenn ich sie als Abkürzung benutze.
+          </p>
+          <p>
+            Die Studierenden, die später auf diese Zeit zurückblicken und das Gefühl haben, sie vergeudet zu haben, sind meiner Meinung nach diejenigen, die die Werkzeuge für sich haben denken lassen. Diejenigen, die das Gefühl haben, einen Vorsprung gewonnen zu haben, sind die, die mit den Werkzeugen gründlicher gedacht haben.
+          </p>
+        </section>
+
+      </div>
+
       <div class="cs-nav">
         <a href="../index.html#blog">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-          All Posts
+          <span data-i18n="back.allPosts">All Posts</span>
         </a>
       </div>
 
@@ -162,18 +283,13 @@
 
   <footer class="footer">
     <div class="container">
-      <p>Designed &amp; built by Lucas Strubel &mdash; <span id="year"></span></p>
+      <p><span data-i18n="footer.built">Designed &amp; built by Lucas Strubel</span> &mdash; <span id="year"></span></p>
     </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const navToggle = document.getElementById('navToggle');
-    const navLinks  = document.querySelector('.nav-links');
-    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-    navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('open')));
-  </script>
   <script src="../theme.js"></script>
+  <script src="../lang.js"></script>
+  <script src="../script.js"></script>
 
 </body>
 </html>
