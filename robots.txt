@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lucasstrubel.github.io/sitemap.xml
+Sitemap: https://lucasstrubel.me/sitemap.xml

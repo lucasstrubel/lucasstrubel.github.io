@@ -1,6 +1,6 @@
 # Portfolio
 
-Live site: lucasstrubel.github.io
+Live site: [lucasstrubel.me](https://lucasstrubel.me)
 
 ## About this project
 
