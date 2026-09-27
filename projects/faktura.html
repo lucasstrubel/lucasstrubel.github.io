@@ -7,14 +7,14 @@
   <script src="../init.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Faktura — Lucas Strubel</title>
-  <meta name="description" content="Local desktop invoicing with EN 16931 e-invoicing, GoBD-compliant: from a university project at TH Mannheim to a shippable application. Java 21, Spring Boot, JavaFX, SQLite." />
+  <meta name="description" content="Local desktop invoicing with EN 16931 e-invoicing, designed around GoBD principles: from a university project at TH Mannheim to a shippable application. Java 21, Spring Boot, JavaFX, SQLite." />
   <link rel="icon" type="image/png" href="../favicon.png" />
   <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
   <link rel="canonical" href="https://lucasstrubel.me/projects/faktura.html" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Lucas Strubel" />
   <meta property="og:title" content="Faktura — Case Study by Lucas Strubel" />
-  <meta property="og:description" content="Local desktop invoicing with EN 16931 e-invoicing, GoBD-compliant: from a university project at TH Mannheim to a shippable application. Java 21, Spring Boot, JavaFX, SQLite." />
+  <meta property="og:description" content="Local desktop invoicing with EN 16931 e-invoicing, designed around GoBD principles: from a university project at TH Mannheim to a shippable application. Java 21, Spring Boot, JavaFX, SQLite." />
   <meta property="og:url" content="https://lucasstrubel.me/projects/faktura.html" />
   <meta property="og:image" content="https://lucasstrubel.me/assets/faktura/uebersicht-hell.png" />
   <meta property="og:image:width" content="1459" />
@@ -98,7 +98,7 @@
           </a>
           <a href="https://github.com/lucasstrubel/faktura/releases/latest" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span data-i18n="fk.download">Download (v3.0.0)</span>
+            <span data-i18n="fk.download">Download (latest release)</span>
           </a>
           <a href="https://github.com/lucasstrubel/faktura/blob/main/dokumentation/pdf/Fallstudie.pdf" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
@@ -153,9 +153,9 @@
             <em>always</em>, not usually:
           </p>
           <ul>
-            <li><strong>GoBD, completeness:</strong> no invoice number may ever be lost, not even when saving fails.</li>
+            <li><strong>Invoice numbers, sequential and unique:</strong> § 14 UStG requires every number to be assigned once and in sequence. The law does not demand a gap-free series, but every gap has to be explained in a tax audit — so Faktura goes further and never loses a number, not even when saving fails.</li>
             <li><strong>GoBD, immutability:</strong> a sent invoice is never edited or deleted — it is offset by a cancellation invoice.</li>
-            <li><strong>§ 14 UStG (German VAT Act):</strong> mandatory details on every invoice, including the tax number and VAT broken down per tax rate.</li>
+            <li><strong>§ 14 UStG (German VAT Act):</strong> mandatory details on every invoice, including the tax number or VAT ID and VAT broken down per tax rate.</li>
             <li><strong>EN 16931:</strong> structured XML alongside the PDF — with exactly the same amounts.</li>
             <li><strong>GDPR:</strong> customer data stays on the user's machine.</li>
           </ul>
@@ -166,7 +166,7 @@
           </p>
           <ul>
             <li>Data lived in JSON files that were rewritten in full on every change.</li>
-            <li>The invoice counter was a number in memory, incremented <em>before</em> saving. If saving failed, the number was gone — a silent violation of exactly the rule that matters most.</li>
+            <li>The invoice counter was a number in memory, incremented <em>before</em> saving. If saving failed, the number was gone — a silent gap in exactly the place a tax auditor looks first.</li>
             <li>Hand-wired dependency injection and a Swing UI that froze on every PDF export.</li>
             <li>E-invoicing — the part the law actually requires — was an explicit non-goal.</li>
           </ul>
@@ -260,9 +260,9 @@
             representations of the same invoice agree.
           </p>
           <p>
-            <strong>Interfaces make a rebuild survivable.</strong> The repository interfaces from
-            version 1.0 survived the switch from JSON to SQLite unchanged, and the UI-free controller
-            classes survived the switch from Swing to JavaFX.
+            <strong>Interfaces make a rebuild survivable.</strong> The repository interfaces the team
+            designed for version 1.0 survived the switch from JSON to SQLite unchanged, and the UI-free
+            controller classes survived the switch from Swing to JavaFX.
           </p>
           <p>
             <strong>Green tests don't mean "it works".</strong> Truncated table columns or shortcuts
@@ -275,11 +275,19 @@
         <section class="cs-section">
           <h2>Built with Claude Code</h2>
           <p>
-            Faktura was built with Claude Code as a tool. It took on the mechanical bulk —
-            package-wide refactorings, scaffolding for repositories, services and tests, UML
-            sources and drafts of the specifications. The decisions were mine: which rules are
-            invariants, that number assignment belongs inside the transaction, what stays from
-            version 1.0, and whether a change was really finished.
+            Version 1.0 and every document from the course — requirements, specification, design
+            and test documentation — were written by hand, without AI. Claude Code came in from
+            version 2.0 onwards, as a tool for the further development. It took on the mechanical
+            bulk — package-wide refactorings, scaffolding for repositories, services and tests, and
+            UML sources. The decisions were mine: which rules are invariants, that number assignment
+            belongs inside the transaction, what stays from version 1.0, and whether a change was
+            really finished.
+          </p>
+          <p>
+            That it worked so well had a clear reason: the requirements, the specification and the
+            test cases already existed, carefully written by hand. They gave the model the context
+            it needed — exactly what I describe as “context beats the prompt” in
+            <a href="../blog/anthropic-academy.html">my post on the Anthropic Academy courses</a>.
           </p>
           <p>
             Every change had to clear the same bar — tests, coverage gate, SpotBugs — and anything
@@ -291,7 +299,7 @@
           <h2>What's Next</h2>
           <ul>
             <li>A usability test with five people — the only acceptance criterion that code can't prove.</li>
-            <li>The small-business VAT exemption (§ 19 UStG) and other exemptions, with the required notice.</li>
+            <li>The small-business VAT exemption (§ 19 UStG) and other exemptions, with the required notice — the biggest remaining gap, since many freelancers in the target group use it. (They are exempt from <em>issuing</em> e-invoices, but not from receiving them.)</li>
             <li>Payment reminders.</li>
             <li>Installer packages for Linux and macOS.</li>
           </ul>
@@ -345,7 +353,7 @@
             <em>immer</em> gelten müssen, nicht meistens:
           </p>
           <ul>
-            <li><strong>GoBD, Lückenlosigkeit:</strong> Keine Rechnungsnummer darf verloren gehen, auch nicht bei einem Fehler beim Speichern.</li>
+            <li><strong>Rechnungsnummern, fortlaufend und einmalig:</strong> § 14 UStG verlangt, dass jede Nummer einmalig und fortlaufend vergeben wird. Lückenlos muss die Folge gesetzlich nicht sein, aber jede Lücke muss sich bei einer Betriebsprüfung erklären lassen — Faktura geht deshalb weiter und verliert keine Nummer, auch nicht bei einem Fehler beim Speichern.</li>
             <li><strong>GoBD, Unveränderbarkeit:</strong> Eine versendete Rechnung wird nie geändert oder gelöscht, sondern durch eine Stornorechnung ausgeglichen.</li>
             <li><strong>§ 14 UStG:</strong> Pflichtangaben auf jeder Rechnung, darunter Steuernummer oder USt-IdNr. und die Steuer je Steuersatz.</li>
             <li><strong>EN 16931:</strong> Strukturiertes XML zusätzlich zum PDF — mit exakt denselben Beträgen.</li>
@@ -358,7 +366,7 @@
           </p>
           <ul>
             <li>Die Daten lagen in JSON-Dateien, die bei jeder Änderung vollständig neu geschrieben wurden.</li>
-            <li>Der Rechnungszähler war eine Zahl im Speicher und wurde <em>vor</em> dem Speichern erhöht. Schlug das Speichern fehl, war die Nummer verbraucht — ein stiller Verstoß gegen genau die Regel, auf die es am meisten ankommt.</li>
+            <li>Der Rechnungszähler war eine Zahl im Speicher und wurde <em>vor</em> dem Speichern erhöht. Schlug das Speichern fehl, war die Nummer verbraucht — eine stille Lücke genau dort, wo eine Betriebsprüfung zuerst hinsieht.</li>
             <li>Manuelle Dependency Injection und eine Swing-Oberfläche, die bei jedem PDF-Export einfror.</li>
             <li>Die E-Rechnung, also das gesetzlich Geforderte, war ausdrückliches Nichtziel.</li>
           </ul>
@@ -456,8 +464,9 @@
           </p>
           <p>
             <strong>Schnittstellen machen einen Umbau überlebbar.</strong> Die
-            Repository-Schnittstellen aus Version 1.0 überstanden den Wechsel von JSON auf SQLite
-            unverändert, die GUI-freien Controller-Klassen den Wechsel von Swing auf JavaFX.
+            Repository-Schnittstellen, die das Team für Version 1.0 entworfen hatte, überstanden den
+            Wechsel von JSON auf SQLite unverändert, die GUI-freien Controller-Klassen den Wechsel
+            von Swing auf JavaFX.
           </p>
           <p>
             <strong>Grüne Tests heißen nicht „funktioniert“.</strong> Abgeschnittene
@@ -470,11 +479,20 @@
         <section class="cs-section">
           <h2>Mit Claude Code entwickelt</h2>
           <p>
-            Faktura ist mit Claude Code als Werkzeug entstanden. Es hat die mechanische Masse
-            übernommen — paketweite Umbauten, Gerüste für Repositories, Services und Tests,
-            UML-Quellen und Entwürfe der Spezifikationen. Die Entscheidungen lagen bei mir: welche
-            Regeln Invarianten sind, dass die Nummernvergabe in die Transaktion gehört, was aus
-            Version 1.0 bleibt und ob eine Änderung wirklich fertig war.
+            Version 1.0 und sämtliche Dokumente aus dem Modul — Lastenheft, Pflichtenheft, Entwurf
+            und Testdokumentation — sind von Hand entstanden, ohne KI. Claude Code kam erst ab
+            Version 2.0 als Werkzeug für die Weiterentwicklung dazu. Es hat die mechanische Masse
+            übernommen — paketweite Umbauten, Gerüste für Repositories, Services und Tests sowie
+            UML-Quellen. Die Entscheidungen lagen bei mir: welche Regeln Invarianten sind, dass die
+            Nummernvergabe in die Transaktion gehört, was aus Version 1.0 bleibt und ob eine
+            Änderung wirklich fertig war.
+          </p>
+          <p>
+            Dass das so gut funktioniert hat, hatte einen klaren Grund: Anforderungen, Spezifikation
+            und Testfälle lagen bereits sorgfältig von Hand ausgearbeitet vor. Sie gaben dem Modell
+            den Kontext, den es brauchte — genau das, was ich in
+            <a href="../blog/anthropic-academy.html">meinem Beitrag zu den Anthropic-Academy-Kursen</a>
+            mit „Kontext schlägt Prompt“ beschreibe.
           </p>
           <p>
             Jede Änderung musste dieselben Hürden nehmen — Tests, Abdeckungsschwelle, SpotBugs —,
@@ -486,7 +504,7 @@
           <h2>Ausblick</h2>
           <ul>
             <li>Usability-Test mit fünf Personen — das einzige Abnahmekriterium, das Code nicht belegen kann.</li>
-            <li>Kleinunternehmerregelung (§ 19 UStG) und Steuerbefreiungen mit Pflichthinweis.</li>
+            <li>Kleinunternehmerregelung (§ 19 UStG) und Steuerbefreiungen mit Pflichthinweis — die größte verbleibende Lücke, weil viele Freiberufler der Zielgruppe sie nutzen. (Sie sind von der Pflicht zur <em>Ausstellung</em> von E-Rechnungen befreit, nicht aber vom Empfang.)</li>
             <li>Mahnwesen.</li>
             <li>Installationspakete für Linux und macOS.</li>
           </ul>

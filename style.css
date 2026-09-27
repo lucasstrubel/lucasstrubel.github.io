@@ -996,6 +996,15 @@ ul { list-style: none; }
   margin-bottom: 24px;
 }
 .cs-body .cs-highlight p { margin-bottom: 0; }
+.cs-body p a,
+.cs-body li a {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 3px;
+}
+.cs-body p a:hover,
+.cs-body li a:hover { color: var(--accent-2); }
 
 .cs-section { margin-bottom: 52px; }
 

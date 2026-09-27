@@ -7,14 +7,14 @@
   <script src="../init.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title data-i18n="title.portfolio">Portfolio Website — Lucas Strubel</title>
-  <meta name="description" content="How I built and hardened my portfolio website: vanilla HTML, CSS and JavaScript, English-first i18n, a strict Content Security Policy, WCAG AA accessibility and a custom domain on GitHub Pages." />
+  <meta name="description" content="How I built and hardened my portfolio website with Claude Code: vanilla HTML, CSS and JavaScript, English-first i18n, a strict Content Security Policy, WCAG AA accessibility and a custom domain on GitHub Pages." />
   <link rel="icon" type="image/png" href="../favicon.png" />
   <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
   <link rel="canonical" href="https://lucasstrubel.me/projects/portfolio.html" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Lucas Strubel" />
   <meta property="og:title" content="Portfolio Website — Case Study by Lucas Strubel" />
-  <meta property="og:description" content="How I built and hardened my portfolio website: vanilla HTML, CSS and JavaScript, English-first i18n, a strict Content Security Policy, WCAG AA accessibility and a custom domain on GitHub Pages." />
+  <meta property="og:description" content="How I built and hardened my portfolio website with Claude Code: vanilla HTML, CSS and JavaScript, English-first i18n, a strict Content Security Policy, WCAG AA accessibility and a custom domain on GitHub Pages." />
   <meta property="og:url" content="https://lucasstrubel.me/projects/portfolio.html" />
   <meta property="og:image" content="https://lucasstrubel.me/assets/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
@@ -79,7 +79,7 @@
           <span class="project-label project-label--case">Web</span>
         </div>
         <h1 class="cs-title" data-i18n="pf.title">Portfolio Website</h1>
-        <p class="cs-subtitle" data-i18n="pf.subtitle">From a hand-written static site to a hardened, bilingual portfolio on its own domain</p>
+        <p class="cs-subtitle" data-i18n="pf.subtitle">From a simple static page to a hardened, bilingual portfolio on its own domain</p>
         <div class="cs-tags">
           <span>HTML</span>
           <span>CSS</span>
@@ -113,10 +113,11 @@
             into a bilingual portfolio with project case studies and a blog.
           </p>
           <p>
-            I deliberately built it without a framework or build step: plain HTML, CSS and
-            JavaScript, hosted on GitHub Pages. Writing every line myself forces me to understand
-            what frameworks usually hide — and it keeps the site fast, cheap to host and easy to
-            reason about.
+            I deliberately kept it free of frameworks and build steps: plain HTML, CSS and
+            JavaScript, hosted on GitHub Pages. That keeps the site fast, free to host and easy to
+            reason about. I did not write every line myself — most of the code was written by
+            Claude Code under my direction. What I own are the decisions and the checks, and that
+            is what this case study is about.
           </p>
         </section>
 
@@ -131,9 +132,9 @@
         </section>
 
         <section class="cs-section">
-          <h2>A Senior-Level Review</h2>
+          <h2>An AI-Assisted Review</h2>
           <p>
-            In September 2026 I asked for a review of the whole site from the perspective of an
+            In September 2026 I had Claude Code review the whole site from the perspective of an
             experienced web developer. It ran as three parallel passes — security and privacy;
             performance, SEO and accessibility; code quality and architecture — and produced a
             prioritised list of findings. I grouped them into phases and implemented the ones with
@@ -142,7 +143,7 @@
           <p>
             Just as important were the things I decided <em>not</em> to do. Migrating to a static
             site generator such as Eleventy would remove duplicated markup, but it adds a build
-            pipeline that a six-page site does not need yet. Some structured data and hardening
+            pipeline that a site of this size does not need yet. Some structured data and hardening
             measures were simply overkill for the purpose of the site.
           </p>
         </section>
@@ -151,7 +152,7 @@
           <h2>Security</h2>
           <ul>
             <li><strong>Strict Content Security Policy:</strong> I moved every inline script and style into files, which made it possible to set <code>script-src 'self'</code> on every page. A CSP shapes architecture — it only works if the code is organised for it.</li>
-            <li><strong>Referrer policy</strong> via meta tag, so outgoing links only reveal the origin.</li>
+            <li><strong>Referrer policy</strong> set explicitly via meta tag, so outgoing links only reveal the origin — regardless of browser defaults.</li>
             <li><strong>Defensive storage access:</strong> <code>localStorage</code> can throw in some privacy modes, so every read and write is guarded and the site falls back to its defaults.</li>
           </ul>
         </section>
@@ -170,14 +171,10 @@
           <h2>Custom Domain</h2>
           <p>
             Through the GitHub Student Developer Pack I got the domain <strong>lucasstrubel.me</strong>
-            for a year. GitHub Pages keeps hosting the site; only DNS changes:
+            for a year. GitHub Pages keeps hosting the site; only DNS changes: A records for the
+            apex domain, a CNAME record for <code>www</code>, a TXT record that verifies the domain
+            and protects it against takeover, and a <code>CNAME</code> file in the repository.
           </p>
-          <ul>
-            <li>four A records pointing the apex domain to GitHub Pages,</li>
-            <li>a CNAME record pointing <code>www</code> to <code>lucasstrubel.github.io</code>,</li>
-            <li>a TXT record that verifies the domain in my GitHub account and protects it against takeover,</li>
-            <li>and a <code>CNAME</code> file in the repository.</li>
-          </ul>
           <p>
             HTTPS comes for free: GitHub Pages issues a Let's Encrypt certificate automatically, so the
             separate SSL certificate from the student pack was not needed. The one stumbling block was
@@ -203,7 +200,7 @@
             <li><strong>Security is an architecture decision.</strong> A strict CSP was only possible after restructuring where code lives.</li>
             <li><strong>First impressions happen before the click.</strong> Making English the source language changed what LinkedIn and search engines show — the preview is the first thing a recruiter sees.</li>
             <li><strong>Prioritising is part of the job.</strong> A good review produces more findings than are worth fixing; choosing what fits the purpose mattered more than completeness.</li>
-            <li><strong>DNS rewards patience.</strong> Most of the domain setup was waiting and verifying, not configuring.</li>
+            <li><strong>Owning code I did not write means checking outcomes.</strong> I did not read every line of this site, but I checked every result: Lighthouse on every page, the console for CSP violations, and every change in the browser. For a static site that is the right level of review — for Faktura's business logic it would not be.</li>
           </ul>
         </section>
 
@@ -211,7 +208,8 @@
           <h2>Built with Claude Code</h2>
           <p>
             As with Faktura, I am open about how this was built: the review and most of the
-            implementation ran with Claude Code. The decisions — what to fix, what to skip, how the
+            implementation ran with Claude Code. Unlike Faktura's core logic, I reviewed this site by
+            its results rather than line by line. The decisions — what to fix, what to skip, how the
             site should present me — and the checking of every change were mine.
           </p>
         </section>
@@ -230,10 +228,11 @@
             und Blog.
           </p>
           <p>
-            Ich habe sie bewusst ohne Framework und ohne Build-Step gebaut: reines HTML, CSS und
-            JavaScript, gehostet über GitHub Pages. Jede Zeile selbst zu schreiben zwingt mich, zu
-            verstehen, was Frameworks sonst verbergen — und hält die Seite schnell, kostenlos im
-            Hosting und leicht nachvollziehbar.
+            Ich habe sie bewusst ohne Framework und ohne Build-Step gehalten: reines HTML, CSS und
+            JavaScript, gehostet über GitHub Pages. Das hält die Seite schnell, kostenlos im Hosting
+            und leicht nachvollziehbar. Jede Zeile selbst geschrieben habe ich nicht — den Großteil
+            des Codes hat Claude Code unter meiner Anleitung geschrieben. Bei mir liegen die
+            Entscheidungen und die Prüfung, und darum geht es in dieser Fallstudie.
           </p>
         </section>
 
@@ -248,10 +247,10 @@
         </section>
 
         <section class="cs-section">
-          <h2>Ein Review auf Senior-Niveau</h2>
+          <h2>Ein KI-gestütztes Review</h2>
           <p>
-            Im September 2026 habe ich die gesamte Seite aus Sicht eines erfahrenen Webentwicklers
-            prüfen lassen. Das Review lief in drei parallelen Durchgängen — Sicherheit und Datenschutz;
+            Im September 2026 habe ich die gesamte Seite von Claude Code aus Sicht eines erfahrenen
+            Webentwicklers prüfen lassen. Das Review lief in drei parallelen Durchgängen — Sicherheit und Datenschutz;
             Performance, SEO und Barrierefreiheit; Codequalität und Architektur — und ergab eine
             priorisierte Liste von Befunden. Diese habe ich in Phasen gegliedert und die umgesetzt,
             die für ein Portfolio den größten Nutzen haben.
@@ -259,7 +258,7 @@
           <p>
             Genauso wichtig war, was ich bewusst <em>nicht</em> umgesetzt habe. Eine Migration auf
             einen Static-Site-Generator wie Eleventy würde doppeltes Markup beseitigen, bringt aber
-            eine Build-Pipeline mit, die eine Seite mit sechs Unterseiten noch nicht braucht. Manche
+            eine Build-Pipeline mit, die eine Seite dieser Größe noch nicht braucht. Manche
             strukturierten Daten und Härtungsmaßnahmen waren für den Zweck der Seite schlicht
             überdimensioniert.
           </p>
@@ -269,7 +268,7 @@
           <h2>Sicherheit</h2>
           <ul>
             <li><strong>Strikte Content Security Policy:</strong> Ich habe alle Inline-Skripte und -Styles in Dateien ausgelagert. Erst dadurch ließ sich auf jeder Seite <code>script-src 'self'</code> setzen. Eine CSP prägt die Architektur — sie funktioniert nur, wenn der Code dafür organisiert ist.</li>
-            <li><strong>Referrer-Policy</strong> per Meta-Tag, damit ausgehende Links nur die Domain preisgeben.</li>
+            <li><strong>Referrer-Policy</strong> explizit per Meta-Tag gesetzt, damit ausgehende Links nur die Domain preisgeben — unabhängig von den Standardeinstellungen des Browsers.</li>
             <li><strong>Abgesicherter Speicherzugriff:</strong> <code>localStorage</code> kann in manchen Privatsphäre-Modi Fehler werfen. Jeder Zugriff ist daher abgesichert, und die Seite fällt auf ihre Standardwerte zurück.</li>
           </ul>
         </section>
@@ -289,13 +288,10 @@
           <p>
             Über das GitHub Student Developer Pack habe ich die Domain <strong>lucasstrubel.me</strong>
             für ein Jahr erhalten. Das Hosting bleibt bei GitHub Pages; geändert wird nur das DNS:
+            A-Records für die Hauptdomain, ein CNAME-Record für <code>www</code>, ein TXT-Record, der
+            die Domain verifiziert und vor Übernahme schützt, und eine <code>CNAME</code>-Datei im
+            Repository.
           </p>
-          <ul>
-            <li>vier A-Records, die die Hauptdomain auf GitHub Pages zeigen lassen,</li>
-            <li>ein CNAME-Record, der <code>www</code> auf <code>lucasstrubel.github.io</code> verweist,</li>
-            <li>ein TXT-Record, der die Domain in meinem GitHub-Konto verifiziert und vor Übernahme schützt,</li>
-            <li>und eine <code>CNAME</code>-Datei im Repository.</li>
-          </ul>
           <p>
             HTTPS gibt es kostenlos dazu: GitHub Pages stellt automatisch ein Let's-Encrypt-Zertifikat
             aus, das separate SSL-Zertifikat aus dem Student Pack war daher nicht nötig. Der einzige
@@ -321,7 +317,7 @@
             <li><strong>Sicherheit ist eine Architekturentscheidung.</strong> Eine strikte CSP wurde erst möglich, nachdem ich umstrukturiert hatte, wo Code liegt.</li>
             <li><strong>Der erste Eindruck entsteht vor dem Klick.</strong> Englisch als Quellsprache hat verändert, was LinkedIn und Suchmaschinen anzeigen — die Vorschau ist das Erste, was ein Recruiter sieht.</li>
             <li><strong>Priorisieren gehört dazu.</strong> Ein gutes Review liefert mehr Befunde, als sich zu beheben lohnt; entscheidend war, auszuwählen, was zum Zweck passt.</li>
-            <li><strong>DNS belohnt Geduld.</strong> Der Großteil der Domain-Einrichtung war Warten und Prüfen, nicht Konfigurieren.</li>
+            <li><strong>Code zu verantworten, den ich nicht geschrieben habe, heißt Ergebnisse prüfen.</strong> Ich habe nicht jede Zeile dieser Seite gelesen, aber jedes Ergebnis geprüft: Lighthouse auf jeder Seite, die Konsole auf CSP-Verstöße und jede Änderung im Browser. Für eine statische Seite ist das die richtige Prüftiefe — für die Geschäftslogik von Faktura wäre sie es nicht.</li>
           </ul>
         </section>
 
@@ -329,8 +325,10 @@
           <h2>Mit Claude Code entwickelt</h2>
           <p>
             Wie bei Faktura lege ich offen, wie die Seite entstanden ist: Das Review und der Großteil
-            der Umsetzung liefen mit Claude Code. Die Entscheidungen — was behoben wird, was nicht, wie
-            die Seite mich präsentieren soll — und die Prüfung jeder Änderung lagen bei mir.
+            der Umsetzung liefen mit Claude Code. Anders als bei der Kernlogik von Faktura habe ich
+            diese Seite über ihre Ergebnisse geprüft, nicht Zeile für Zeile. Die Entscheidungen — was
+            behoben wird, was nicht, wie die Seite mich präsentieren soll — und die Prüfung jeder
+            Änderung lagen bei mir.
           </p>
         </section>
 

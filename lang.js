@@ -55,9 +55,9 @@
     // Projects
     'projects.tag':       'Was ich gebaut habe',
     'projects.title':     'Ausgewählte Projekte',
-    'projects.faktura.desc': 'Schlanke Desktop-Fakturierung für Freiberufler und Kleinstunternehmen — vom Angebot bis zur Rechnung, mit E-Rechnung nach EN 16931, GoBD-konform und vollständig lokal. Gestartet als Teamprojekt an der TH Mannheim, von mir allein zur auslieferbaren Anwendung weiterentwickelt.',
+    'projects.faktura.desc': 'Schlanke Desktop-Fakturierung für Freiberufler und Kleinstunternehmen — vom Angebot bis zur Rechnung, mit E-Rechnung nach EN 16931, nach GoBD-Grundsätzen entworfen und vollständig lokal. Gestartet als Teamprojekt an der TH Mannheim, von mir allein zur auslieferbaren Anwendung weiterentwickelt.',
     'projects.portfolio.title': 'Portfolio-Website &amp; Tech-Blog',
-    'projects.portfolio.desc':  'Diese Website — selbst konzipiert, gestaltet und entwickelt, ohne Framework. Zweisprachig (DE/EN), mit Hell- und Dunkelmodus, Projektübersicht und Blog; gehostet über GitHub Pages und laufend gepflegt.',
+    'projects.portfolio.desc':  'Diese Website — von mir konzipiert und gesteuert, mit Claude Code umgesetzt, ohne Framework. Zweisprachig (DE/EN), mit Hell- und Dunkelmodus, Projektübersicht und Blog; gehostet über GitHub Pages und laufend gepflegt.',
     'projects.api.title': 'Claude-API-Anwendung',
     'projects.api.desc':  'Eigene Anwendung auf Basis der Claude API, die parallel zum Kurs „Building with the Claude API“ entsteht — von Prompting und Tool Use bis zur Anbindung an eigene Daten. Details folgen, sobald eine erste Version steht.',
     'projects.wip':       'In Arbeit',
@@ -68,7 +68,7 @@
     'blog.subtitle': 'Gedanken zu Daten, Engineering und Wirtschaftsinformatik.',
     'post.academy.category': 'Erfahrungsbericht',
     'post.academy.title':    'Zehn Kurse Anthropic Academy: Was wirklich hängen geblieben ist',
-    'post.academy.excerpt':  'Ich habe die kostenlosen Kurse der Anthropic Academy durchgearbeitet — von AI Fluency bis zu Subagents. Ein ehrlicher Bericht darüber, was sich gelohnt hat und was ich seitdem anders mache.',
+    'post.academy.excerpt':  'Ich habe zehn kostenlose Kurse der Anthropic Academy durchgearbeitet — von AI Fluency bis zu Subagents. Ein ehrlicher Bericht darüber, was sich gelohnt hat und was ich seitdem anders mache.',
     'post.academy.meta':     'September 2026 &middot; 7 Min. Lesezeit',
     'post.fluency.title':   'KI-Kompetenz: Die Fähigkeit, auf die es gerade wirklich ankommt',
     'post.fluency.excerpt': 'Warum der souveräne Umgang mit KI-Werkzeugen zur Grundvoraussetzung wird — und was es heißt, sie wirklich zu beherrschen, statt sie nur zu benutzen.',
@@ -102,12 +102,12 @@
     'fk.subtitle':  'Vom Hochschulprojekt zur auslieferbaren Fakturierungsanwendung',
     'fk.heroAlt':   'Faktura-Übersicht mit offenen und überfälligen Rechnungen sowie dem Jahresumsatz',
     'fk.source':    'Quellcode auf GitHub',
-    'fk.download':  'Download (v3.0.0)',
+    'fk.download':  'Download (aktuelle Version)',
     'fk.caseStudy': 'Vollständige Fallstudie (PDF)',
 
     // Portfolio case study
     'pf.title':     'Portfolio-Website',
-    'pf.subtitle':  'Von der handgeschriebenen statischen Seite zum abgesicherten, zweisprachigen Portfolio mit eigener Domain',
+    'pf.subtitle':  'Von der einfachen statischen Seite zum abgesicherten, zweisprachigen Portfolio mit eigener Domain',
     'pf.heroAlt':   'Startseite von lucasstrubel.me im Dunkelmodus mit Vorstellung und Porträt',
     'pf.source':    'Quellcode auf GitHub',
     'pf.live':      'Live-Seite'

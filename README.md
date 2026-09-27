@@ -4,7 +4,7 @@ Live site: [lucasstrubel.me](https://lucasstrubel.me)
 
 ## About this project
 
-A personal portfolio built from scratch using HTML, CSS, and vanilla JavaScript — without frameworks or templates. My goal was to create a modern, fully responsive site while staying close to the fundamentals. By writing every line myself, I deepened my understanding of how each part works together and strengthened the foundation I rely on when building more complex projects.
+A personal portfolio in HTML, CSS, and vanilla JavaScript — without frameworks, templates or a build step. My goal was a modern, fully responsive site that stays close to the fundamentals. Most of the code was written with Claude Code under my direction; the decisions and the checking of every change were mine. The [case study](https://lucasstrubel.me/projects/portfolio.html) describes how.
 
 ## What's inside
 
