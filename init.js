@@ -9,9 +9,14 @@
   }
 
   var theme = read('theme') ||
-    (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   if (theme === 'light') html.setAttribute('data-theme', 'light');
 
-  // English is the default; German only when the visitor chose it
-  html.lang = read('lang') === 'de' ? 'de' : 'en';
+  // A choice made with the toggle wins; otherwise follow the browser (German or English)
+  var lang = read('lang');
+  if (!lang) {
+    var prefs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+    lang = /^de\b/i.test(prefs[0]) ? 'de' : 'en';
+  }
+  html.lang = lang === 'de' ? 'de' : 'en';
 })();

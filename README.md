@@ -14,11 +14,10 @@ A personal portfolio in HTML, CSS, and vanilla JavaScript — without frameworks
 - **Scroll animations** — IntersectionObserver reveals with staggered card entrances
 - **Active nav highlight** — nav link updates automatically as you scroll through sections
 - **Project case studies** — detail pages under `projects/`: [Faktura](https://lucasstrubel.me/projects/faktura.html) and a case study of [this website itself](https://lucasstrubel.me/projects/portfolio.html) — review, security, accessibility and the custom domain setup
-- **Blog** — writing section with individual post pages under `blog/`
 - **Dynamic footer** — current year injected via JavaScript
 - **Self-hosted fonts** — Inter + Space Grotesk served from `assets/fonts/` as variable woff2, so no visitor data goes to Google (GDPR)
 - **Link previews & SEO** — English meta description and Open Graph tags with a dedicated preview image, canonical URLs, `sitemap.xml`, `robots.txt` and JSON-LD structured data
-- **Accessible cards** — project and blog cards are real links (stretched-link pattern), reachable by keyboard with a visible focus ring
+- **Accessible cards** — project cards are real links (stretched-link pattern), reachable by keyboard with a visible focus ring
 - **Custom 404 page** — served by GitHub Pages for any unknown URL, in both languages
 - **Content Security Policy** — no inline scripts or styles, so a strict `script-src 'self'` policy is set via meta tag on every page
 - **Accessibility** — skip link, visible focus ring, WCAG AA colour contrast in both themes, `prefers-reduced-motion` support, and a mobile menu with `aria-expanded` that closes on Escape

@@ -8,14 +8,14 @@
   <script src="init.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lucas Strubel — Portfolio</title>
-  <meta name="description" content="Lucas Strubel, business informatics student: projects such as Faktura, skills in software engineering, data and process analysis, and a blog." />
+  <meta name="description" content="Lucas Strubel, business informatics student: projects such as Faktura, skills in software engineering, data and process analysis." />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <link rel="canonical" href="https://lucasstrubel.me/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Lucas Strubel" />
   <meta property="og:title" content="Lucas Strubel — Portfolio" />
-  <meta property="og:description" content="Lucas Strubel, business informatics student: projects such as Faktura, skills in software engineering, data and process analysis, and a blog." />
+  <meta property="og:description" content="Lucas Strubel, business informatics student: projects such as Faktura, skills in software engineering, data and process analysis." />
   <meta property="og:url" content="https://lucasstrubel.me/" />
   <meta property="og:image" content="https://lucasstrubel.me/assets/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
@@ -58,7 +58,6 @@
         <li><a href="#about" data-i18n="nav.about">About</a></li>
         <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
         <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
-        <li><a href="#blog">Blog</a></li>
         <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
       </ul>
       <div class="nav-actions">
@@ -131,9 +130,9 @@
     </div>
     <div class="hero-image">
       <div class="hero-image-wrapper">
-        <img src="assets/picture1-680.webp" srcset="assets/picture1-340.webp 340w, assets/picture1-680.webp 680w"
-          sizes="(max-width: 600px) 220px, (max-width: 900px) 260px, 340px"
-          alt="Lucas Strubel" width="680" height="680" fetchpriority="high" />
+        <img src="assets/picture2-400.webp" srcset="assets/picture2-400.webp 400w, assets/picture2.webp 800w"
+          sizes="(max-width: 600px) 240px, (max-width: 900px) 300px, 420px"
+          alt="Lucas Strubel" width="800" height="800" fetchpriority="high" />
         <div class="hero-image-glow"></div>
       </div>
     </div>
@@ -147,47 +146,38 @@
         <h2 class="section-title" data-i18n="about.title">About Me</h2>
       </div>
       <div class="about-grid">
-        <div class="about-image-col">
-          <div class="about-image-frame">
-            <img src="assets/picture2.webp" srcset="assets/picture2-400.webp 400w, assets/picture2.webp 800w"
-              sizes="(max-width: 900px) 380px, 400px" width="800" height="800" loading="lazy" alt="Lucas Strubel outdoors" data-i18n-attr="alt:about.imgAlt" />
-          </div>
-        </div>
         <div class="about-text-col">
           <p class="about-lead" data-i18n="about.lead">I'm a Business Informatics student who connects technical depth with business thinking. I turn complex processes, data, and systems into clear, pragmatic solutions for real organisational challenges.</p>
           <p class="about-body" data-i18n="about.body">Through personal projects, team labs, and coursework I've built the habit of structuring ambiguous problems, explaining them simply, and delivering results that are actually usable. When I'm not studying or coding, you'll find me somewhere outdoors.</p>
-          <div class="about-stats">
-            <div class="stat">
-              <span class="stat-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M12 8v4l3 3" />
-                </svg>
-              </span>
-              <span class="stat-label" data-i18n="about.stat1">Problem Solving</span>
-            </div>
-            <div class="stat">
-              <span class="stat-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                </svg>
-              </span>
-              <span class="stat-label" data-i18n="about.stat2">Communication</span>
-            </div>
-            <div class="stat">
-              <span class="stat-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <line x1="18" y1="20" x2="18" y2="10" />
-                  <line x1="12" y1="20" x2="12" y2="4" />
-                  <line x1="6" y1="20" x2="6" y2="14" />
-                </svg>
-              </span>
-              <span class="stat-label" data-i18n="about.stat3">Analytical Thinking</span>
-            </div>
-          </div>
+          <ul class="about-highlights">
+            <li class="about-highlight">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
+              </svg>
+              <h3 data-i18n="about.hl.lang.title">Languages</h3>
+              <p>Java, Python, SQL, JavaScript</p>
+            </li>
+            <li class="about-highlight">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+              </svg>
+              <h3>Soft Skills</h3>
+              <p data-i18n="about.hl.soft.text">Problem solving, communication, analytical thinking</p>
+            </li>
+            <li class="about-highlight">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="7" width="20" height="14" rx="2" />
+                <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+                <line x1="2" y1="13" x2="22" y2="13" />
+              </svg>
+              <h3 data-i18n="about.hl.proj.title">Projects</h3>
+              <p data-i18n="about.hl.proj.text">2 shipped, 1 in progress</p>
+            </li>
+          </ul>
           <a href="assets/Lebenslauf_Lucas_Strubel.pdf" download class="btn btn-outline">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
               stroke-linejoin="round">
@@ -236,14 +226,11 @@
               <circle cx="8.5" cy="6.5" r="0.5" />
             </svg>
           </div>
-          <h3 data-i18n="skills.web">Web &amp; APIs</h3>
+          <h3 data-i18n="skills.web">Web</h3>
           <div class="skill-tags">
             <span>HTML</span>
             <span>CSS</span>
             <span>JavaScript</span>
-            <span class="skill-tag--learning" title="Currently studying" data-i18n-attr="title:skills.learning">REST</span>
-            <span class="skill-tag--learning" title="Currently studying" data-i18n-attr="title:skills.learning">PHP</span>
-            <span class="skill-tag--learning" title="Currently studying" data-i18n-attr="title:skills.learning">Claude API</span>
           </div>
         </div>
         <div class="skill-card">
@@ -278,11 +265,36 @@
             <span>DMN</span>
             <span>Signavio</span>
             <span data-i18n="skills.processAnalysis">Process Analysis</span>
-            <span class="skill-tag--learning" title="Currently studying" data-i18n-attr="title:skills.learning">SAP S/4HANA</span>
           </div>
         </div>
       </div>
-      <p class="skills-legend" data-i18n="skills.learning">Currently studying</p>
+
+      <h3 class="tools-title" data-i18n="skills.tools">Tools I use</h3>
+      <ul class="tools-grid">
+        <li class="tool-tile" title="VS Code">
+          <img src="assets/tools/vscode.svg" alt="VS Code" width="32" height="32" loading="lazy" />
+        </li>
+        <li class="tool-tile" title="Git">
+          <img src="assets/tools/git.svg" alt="Git" width="32" height="32" loading="lazy" />
+        </li>
+        <li class="tool-tile tool-tile--mono" title="GitHub">
+          <img src="assets/tools/github.svg" alt="GitHub" width="32" height="32" loading="lazy" />
+        </li>
+        <li class="tool-tile" title="Claude Code">
+          <img src="assets/tools/claude.svg" alt="Claude Code" width="32" height="32" loading="lazy" />
+        </li>
+        <li class="tool-tile tool-tile--mono" title="Codex">
+          <img src="assets/tools/codex.svg" alt="Codex" width="32" height="32" loading="lazy" />
+        </li>
+        <li class="tool-tile tool-tile--generic" title="Signavio">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" role="img" aria-label="Signavio">
+            <circle cx="5" cy="6" r="2" />
+            <circle cx="19" cy="6" r="2" />
+            <circle cx="12" cy="18" r="2" />
+            <path d="M7 6h10M5 8v5a2 2 0 0 0 2 2h3M19 8v5a2 2 0 0 1-2 2h-3" />
+          </svg>
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -331,8 +343,8 @@
           </div>
           <div class="project-body">
             <span class="project-label project-label--case">Web</span>
-            <h3 class="project-title"><a href="projects/portfolio.html" class="card-link" data-i18n="projects.portfolio.title">Portfolio Website &amp; Tech Blog</a></h3>
-            <p class="project-desc" data-i18n="projects.portfolio.desc">This website — conceived and directed by me, built with Claude Code, no framework. Bilingual (DE/EN), with light and dark mode, a project overview and a blog; hosted on GitHub Pages and continuously maintained.</p>
+            <h3 class="project-title"><a href="projects/portfolio.html" class="card-link" data-i18n="projects.portfolio.title">Portfolio Website</a></h3>
+            <p class="project-desc" data-i18n="projects.portfolio.desc">This website — conceived and directed by me, built with Claude Code, no framework. Bilingual (DE/EN), with light and dark mode and project case studies; hosted on GitHub Pages and continuously maintained.</p>
           </div>
           <div class="project-footer">
             <div class="project-tech">
@@ -378,58 +390,6 @@
             <polyline points="12 5 19 12 12 19" />
           </svg>
         </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Blog -->
-  <section class="section section-dark" id="blog">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag" data-i18n="blog.tag">Writing</span>
-        <h2 class="section-title">Blog</h2>
-        <p class="section-subtitle" data-i18n="blog.subtitle">Thoughts on data, engineering, and business informatics.</p>
-      </div>
-      <div class="blog-grid">
-        <article class="blog-card blog-card--featured">
-          <div class="blog-card-top">
-            <span class="blog-category" data-i18n="post.academy.category">Experience Report</span>
-            <span class="blog-meta" data-i18n="post.academy.meta">September 2026 &middot; 7 min read</span>
-          </div>
-          <h3 class="blog-title"><a href="blog/anthropic-academy.html" class="card-link" data-i18n="post.academy.title">Ten Anthropic Academy Courses: What Actually Stuck</a></h3>
-          <p class="blog-excerpt" data-i18n="post.academy.excerpt">I worked through ten free Anthropic Academy courses — from AI Fluency to subagents. An honest account of what was worth it and what I do differently since.</p>
-          <div class="blog-tags">
-            <span data-i18n="tag.ai">AI</span>
-            <span data-i18n="tag.learning">Learning</span>
-            <span>Claude</span>
-          </div>
-        </article>
-        <article class="blog-card">
-          <div class="blog-card-top">
-            <span class="blog-category">Essay</span>
-            <span class="blog-meta" data-i18n="post.fluency.meta">May 2026 &middot; 5 min read</span>
-          </div>
-          <h3 class="blog-title"><a href="blog/ai-fluency.html" class="card-link" data-i18n="post.fluency.title">AI Fluency: The Skill That Actually Matters Right Now</a></h3>
-          <p class="blog-excerpt" data-i18n="post.fluency.excerpt">Why knowing how to work with AI tools is becoming a baseline expectation — and what it really means to be fluent, not just a user.</p>
-          <div class="blog-tags">
-            <span data-i18n="tag.ai">AI</span>
-            <span data-i18n="tag.productivity">Productivity</span>
-            <span data-i18n="tag.skills">Skills</span>
-          </div>
-        </article>
-        <article class="blog-card">
-          <div class="blog-card-top">
-            <span class="blog-category">Workflow</span>
-            <span class="blog-meta" data-i18n="post.workflow.meta">December 2025 &middot; 6 min read</span>
-          </div>
-          <h3 class="blog-title"><a href="blog/ai-student-workflow.html" class="card-link" data-i18n="post.workflow.title">How I Actually Use AI as a Student</a></h3>
-          <p class="blog-excerpt" data-i18n="post.workflow.excerpt">A practical account of integrating AI into studying, writing, and coding — and where drawing the line matters more than most tutorials admit.</p>
-          <div class="blog-tags">
-            <span data-i18n="tag.ai">AI</span>
-            <span data-i18n="tag.student">Student Life</span>
-            <span data-i18n="tag.productivity">Productivity</span>
-          </div>
-        </article>
       </div>
     </div>
   </section>

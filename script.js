@@ -40,14 +40,30 @@
 
   // ── Scroll reveal (CSS shows everything at once under prefers-reduced-motion) ──
   var revealEls = document.querySelectorAll(
-    '.section-header, .skill-card, .project-card, .blog-card, .about-grid, .contact-wrapper, .about-stats'
+    '.section-header, .skill-card, .project-card, .about-grid, .contact-wrapper, .about-highlights, .tools-grid'
   );
+
+  // Once faded in, drop the reveal classes: their transform/transition would
+  // otherwise override the cards' own hover lift
+  function settleReveal(el) {
+    var done = false;
+    function settle() {
+      if (done) return;
+      done = true;
+      el.classList.remove('reveal', 'visible');
+    }
+    el.addEventListener('transitionend', function (e) {
+      if (e.target === el && e.propertyName === 'opacity') settle();
+    });
+    setTimeout(settle, 700);
+  }
 
   var revealIO = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
         revealIO.unobserve(entry.target);
+        settleReveal(entry.target);
       }
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });

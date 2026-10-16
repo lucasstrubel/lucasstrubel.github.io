@@ -39,7 +39,6 @@
         <li><a href="../index.html#about" data-i18n="nav.about">About</a></li>
         <li><a href="../index.html#skills" data-i18n="nav.skills">Skills</a></li>
         <li><a href="../index.html#projects" data-i18n="nav.projects">Projects</a></li>
-        <li><a href="../index.html#blog">Blog</a></li>
         <li><a href="../index.html#contact" data-i18n="nav.contact">Contact</a></li>
       </ul>
       <div class="nav-actions">
@@ -109,8 +108,9 @@
           <h2>Overview</h2>
           <p>
             This website is where recruiters and anyone else curious can see who I am, what I have
-            built and what I think about. It started in 2025 as a simple static page and has grown
-            into a bilingual portfolio with project case studies and a blog.
+            built and what I can do. It started in 2025 as a simple static page and has grown
+            into a bilingual portfolio with project case studies. A blog was part of it for a while;
+            I removed it to keep the site focused on projects and skills.
           </p>
           <p>
             I deliberately kept it free of frameworks and build steps: plain HTML, CSS and
@@ -124,7 +124,7 @@
         <section class="cs-section">
           <h2>Architecture</h2>
           <ul>
-            <li><strong>Static pages:</strong> one homepage, one page per case study and blog post, a custom 404 page. No database, no server-side code.</li>
+            <li><strong>Static pages:</strong> one homepage, one page per case study, a custom 404 page. No database, no server-side code.</li>
             <li><strong>No flash on load:</strong> a tiny synchronous <code>init.js</code> in the <code>&lt;head&gt;</code> sets the colour theme and language before the first paint.</li>
             <li><strong>English-first i18n:</strong> English is written directly in the markup, so search engines and link previews see it. German UI strings live in a dictionary in <code>lang.js</code>; long-form text such as this page uses paired language blocks. The choice is remembered in <code>localStorage</code>.</li>
             <li><strong>Privacy by default:</strong> self-hosted fonts, no analytics, no cookies, no third-party requests.</li>
@@ -188,7 +188,7 @@
           <div class="cs-highlight">
             <p>
               Lighthouse (local measurement): Performance 98–99, Accessibility 100, Best Practices 100
-              and SEO 100 across the homepage, case studies and blog posts — with zero console errors
+              and SEO 100 across the homepage and case studies — with zero console errors
               and no Content Security Policy violations on any page.
             </p>
           </div>
@@ -223,9 +223,10 @@
           <h2>Überblick</h2>
           <p>
             Auf dieser Website können sich Recruiter und alle anderen Interessierten ein Bild davon
-            machen, wer ich bin, was ich gebaut habe und worüber ich nachdenke. Sie begann 2025 als
-            einfache statische Seite und ist inzwischen ein zweisprachiges Portfolio mit Fallstudien
-            und Blog.
+            machen, wer ich bin, was ich gebaut habe und was ich kann. Sie begann 2025 als
+            einfache statische Seite und ist inzwischen ein zweisprachiges Portfolio mit Fallstudien.
+            Eine Zeit lang gehörte auch ein Blog dazu; ich habe ihn entfernt, damit die Seite sich auf
+            Projekte und Kenntnisse konzentriert.
           </p>
           <p>
             Ich habe sie bewusst ohne Framework und ohne Build-Step gehalten: reines HTML, CSS und
@@ -239,7 +240,7 @@
         <section class="cs-section">
           <h2>Architektur</h2>
           <ul>
-            <li><strong>Statische Seiten:</strong> eine Startseite, je eine Seite pro Fallstudie und Blogbeitrag, eine eigene 404-Seite. Keine Datenbank, kein serverseitiger Code.</li>
+            <li><strong>Statische Seiten:</strong> eine Startseite, je eine Seite pro Fallstudie, eine eigene 404-Seite. Keine Datenbank, kein serverseitiger Code.</li>
             <li><strong>Kein Flackern beim Laden:</strong> ein kleines, synchron geladenes <code>init.js</code> im <code>&lt;head&gt;</code> setzt Farbschema und Sprache vor dem ersten Rendern.</li>
             <li><strong>Englisch als Quellsprache:</strong> Englisch steht direkt im HTML, damit Suchmaschinen und Link-Vorschauen es sehen. Die deutschen Texte liegen in einem Wörterbuch in <code>lang.js</code>; lange Texte wie diese Seite nutzen gepaarte Sprachblöcke. Die Auswahl wird in <code>localStorage</code> gespeichert.</li>
             <li><strong>Datenschutz als Standard:</strong> selbst gehostete Schriften, kein Tracking, keine Cookies, keine Anfragen an Drittanbieter.</li>
@@ -305,7 +306,7 @@
           <div class="cs-highlight">
             <p>
               Lighthouse (lokal gemessen): Performance 98–99, Barrierefreiheit 100, Best Practices 100
-              und SEO 100 auf Startseite, Fallstudien und Blogbeiträgen — ohne Konsolenfehler und ohne
+              und SEO 100 auf Startseite und Fallstudien — ohne Konsolenfehler und ohne
               Verstöße gegen die Content Security Policy auf irgendeiner Seite.
             </p>
           </div>
