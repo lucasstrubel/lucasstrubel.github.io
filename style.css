@@ -63,18 +63,43 @@ html:not(.theme-ready) * { transition: none !important; }
   --bg-card:    #f5f3ef;
   --border:     rgba(92, 84, 72, 0.12);
   --text:       #1e2228;
-  --text-muted: #625d58;
+  --text-muted: #4d4843;
   --accent:     #5c5448;
   --accent-2:   #4a4238;
   --accent-3:   #74675a;
   --accent-rgb: 92, 84, 72;
   --shadow:     0 4px 32px rgba(0,0,0,0.08);
-  --nav-bg:     rgba(232,228,220,0.85);
-  --menu-bg:    rgba(232,228,220,0.97);
+  --nav-bg:     rgba(221,215,204,0.92);
+  --menu-bg:    rgba(221,215,204,0.98);
 }
 
 [data-theme="light"] .btn-primary {
-  color: #f0ede8;
+  background: linear-gradient(135deg, #c4b8a0, #d8cebc);
+  color: #1c1c1c;
+  box-shadow: 0 4px 18px rgba(92,84,72,0.18);
+}
+/* In light mode the hero and contact CTAs use the quieter ghost / outline looks */
+[data-theme="light"] .hero-actions .btn-primary,
+[data-theme="light"] .contact-wrapper > .btn-primary {
+  background: transparent;
+  box-shadow: none;
+}
+[data-theme="light"] .hero-actions .btn-primary {
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+[data-theme="light"] .contact-wrapper > .btn-primary {
+  color: var(--accent-2);
+  border: 1px solid var(--accent-2);
+}
+[data-theme="light"] .hero-actions .btn-primary:hover {
+  background: rgba(var(--accent-rgb),0.06);
+  border-color: rgba(var(--accent-rgb),0.3);
+  box-shadow: none;
+}
+[data-theme="light"] .contact-wrapper > .btn-primary:hover {
+  background: rgba(var(--accent-rgb),0.1);
+  box-shadow: none;
 }
 
 .theme-toggle {
@@ -299,10 +324,10 @@ ul { list-style: none; }
 
 /* ── Hero ── */
 .hero {
-  min-height: 100vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
-  padding: calc(var(--nav-h) + 40px) 24px 80px;
+  padding: calc(var(--nav-h) + 40px) 24px 40px;
   position: relative;
   overflow: hidden;
   max-width: 1100px;
@@ -526,11 +551,23 @@ ul { list-style: none; }
   line-height: 1.55;
   color: var(--text-muted);
 }
+.about-highlight a {
+  color: var(--accent-2);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.about-text-col > .btn {
+  display: flex;
+  width: fit-content;
+  margin: 0 auto;
+}
 
 /* ── Skills ── */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 260px));
+  justify-content: center;
   gap: 20px;
 }
 
@@ -539,6 +576,7 @@ ul { list-style: none; }
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 28px;
+  aspect-ratio: 4 / 5;
   transition: all var(--transition);
 }
 .skill-card:hover {
@@ -798,6 +836,8 @@ ul { list-style: none; }
   }
 
   .about-highlights { grid-template-columns: 1fr; gap: 12px; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .skill-card { aspect-ratio: auto; }
 
   .hero-image-wrapper { width: 240px; }
 }

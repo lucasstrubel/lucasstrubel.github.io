@@ -38,16 +38,14 @@
     'about.hl.lang.title': 'Sprachen',
     'about.hl.soft.text':  'Problemlösung, Kommunikation, analytisches Denken',
     'about.hl.proj.title': 'Projekte',
-    'about.hl.proj.text':  '2 fertiggestellt, 1 in Arbeit',
+    'about.hl.proj.text':  'u. a. <a href="projects/faktura.html">Faktura</a>',
     'about.cv':     'Lebenslauf herunterladen',
 
     // Skills
     'skills.tag':     'Womit ich arbeite',
     'skills.title':   'Kenntnisse &amp; Werkzeuge',
-    'skills.web':     'Web',
-    'skills.data':    'Daten &amp; Datenbanken',
+    'skills.webdata': 'Web &amp; Datenbanken',
     'skills.process': 'Prozess- &amp; Business-Analyse',
-    'skills.processAnalysis': 'Prozessanalyse',
     'skills.tools':   'Werkzeuge, die ich nutze',
 
     // Projects
